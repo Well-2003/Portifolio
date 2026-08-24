@@ -14,12 +14,12 @@ const translations = {
         btn_contact_short: "Contato",
 
         about_title: "Sobre Mim",
-        bio: "Meu foco como desenvolvedor é construir sistemas que funcionam bem e que as pessoas gostem de usar. Tenho um carinho especial por arquitetura de código: gosto de organizar a estrutura antes de sair escrevendo, entender o \"como\" e o \"porquê\" de cada decisão e voltar depois para deixar tudo mais simples do que estava.",
-        bio_2: "Na prática, isso aparece dos dois lados do meu trabalho. No web, montando interfaces responsivas com HTML, CSS e JavaScript e ligando essa interface a uma lógica de backend em Python. Nos jogos, estruturando o comportamento dos personagens com máquinas de estado e ajustando os controles até a resposta parecer natural na mão de quem joga. Em todos eles, guardo o trabalho no GitHub desde o primeiro commit, porque é isso que me deixa experimentar sem medo de quebrar o que já funciona.",
+        bio: "Sou um estudante do último ano de Ciência da Computação na UNASP e desenvolvedor de jogos e web. Meu foco principal é criar experiências que as pessoas realmente gostem de usar ou jogar, sempre priorizando eficiência e funcionalidade.",
+        bio_2: "Gosto muito de organizar a estrutura dos projetos antes da implementação, compreendendo o propósito por trás de cada decisão. Acredito no desenvolvimento como um processo contínuo: sinto-me à vontade e ansioso para revisitar sistemas, simplificando processos e aprimorando funcionalidades à medida que aprendo e cresço profissionalmente.",
+        bio_3: "Seja desenvolvendo um jogo ou um software, meu objetivo é entregar soluções inteligentes e uma excelente experiência de usuário.",
         about_loc_label: "Localização:",
         about_focus_label: "Foco:",
         about_focus_value: "Desenvolvimento web e de jogos",
-        about_stack_label: "Stack:",
         about_lang_label: "Idiomas:",
         about_lang_value: "Português (nativo), Inglês (técnico), Espanhol (básico)",
         btn_contact: "Entrar em contato",
@@ -97,12 +97,12 @@ const translations = {
         btn_contact_short: "Contact",
 
         about_title: "About Me",
-        bio: "My focus as a developer is building systems that work well and that people enjoy using. I have a soft spot for code architecture: I like to organize the structure before writing anything, to understand the \"how\" and the \"why\" behind each decision, and to come back later to make it simpler than it was.",
-        bio_2: "In practice, that shows up on both sides of my work. On the web, building responsive interfaces with HTML, CSS and JavaScript and wiring them to backend logic in Python. In games, structuring character behaviour with state machines and tuning the controls until the response feels natural in the player's hands. In all of them, I keep my work on GitHub from the first commit, because that is what lets me experiment without fear of breaking what already works.",
+        bio: "I am a final-year Computer Science student at UNASP and a game and web developer. My main focus is creating experiences that people genuinely enjoy using or playing, always putting efficiency and functionality first.",
+        bio_2: "I really enjoy organizing a project's structure before implementation, understanding the purpose behind each decision. I see development as a continuous process: I feel comfortable and eager to revisit systems, simplifying processes and improving features as I learn and grow professionally.",
+        bio_3: "Whether I am building a game or a piece of software, my goal is to deliver smart solutions and an excellent user experience.",
         about_loc_label: "Location:",
         about_focus_label: "Focus:",
         about_focus_value: "Web and game development",
-        about_stack_label: "Stack:",
         about_lang_label: "Languages:",
         about_lang_value: "Portuguese (native), English (technical), Spanish (basic)",
         btn_contact: "Contact Me",
@@ -180,12 +180,12 @@ const translations = {
         btn_contact_short: "Contacto",
 
         about_title: "Sobre Mí",
-        bio: "Mi foco como desarrollador es construir sistemas que funcionen bien y que las personas disfruten usar. Tengo un cariño especial por la arquitectura del código: me gusta organizar la estructura antes de empezar a escribir, entender el \"cómo\" y el \"porqué\" de cada decisión y volver después para dejarlo todo más simple de lo que estaba.",
-        bio_2: "En la práctica, eso aparece en los dos lados de mi trabajo. En la web, armando interfaces responsivas con HTML, CSS y JavaScript y conectándolas a una lógica de backend en Python. En los juegos, estructurando el comportamiento de los personajes con máquinas de estados y ajustando los controles hasta que la respuesta se sienta natural en las manos de quien juega. En todos ellos guardo el trabajo en GitHub desde el primer commit, porque es lo que me deja experimentar sin miedo a romper lo que ya funciona.",
+        bio: "Soy estudiante del último año de Ciencias de la Computación en UNASP y desarrollador de juegos y web. Mi foco principal es crear experiencias que las personas realmente disfruten usar o jugar, priorizando siempre la eficiencia y la funcionalidad.",
+        bio_2: "Me gusta mucho organizar la estructura de los proyectos antes de la implementación, comprendiendo el propósito detrás de cada decisión. Creo en el desarrollo como un proceso continuo: me siento cómodo y con ganas de revisitar sistemas, simplificando procesos y mejorando funcionalidades a medida que aprendo y crezco profesionalmente.",
+        bio_3: "Ya sea desarrollando un juego o un software, mi objetivo es entregar soluciones inteligentes y una excelente experiencia de usuario.",
         about_loc_label: "Ubicación:",
         about_focus_label: "Enfoque:",
         about_focus_value: "Desarrollo web y de juegos",
-        about_stack_label: "Stack:",
         about_lang_label: "Idiomas:",
         about_lang_value: "Portugués (nativo), Inglés (técnico), Español (básico)",
         btn_contact: "Contáctame",
@@ -329,6 +329,39 @@ function setCvLang(lang) {
 cvOptions.forEach(option => {
     option.addEventListener('click', () => setCvLang(option.getAttribute('data-cv')));
 });
+
+/* Alguns navegadores ignoram o atributo download e abrem o PDF no leitor embutido.
+   Aqui o arquivo e buscado e salvo pelo proprio site, entao o download acontece de verdade. */
+if (cvDownload) {
+    cvDownload.addEventListener('click', async (event) => {
+        if (location.protocol === 'file:') return;
+
+        event.preventDefault();
+
+        const url = cvDownload.getAttribute('href'),
+              fileName = cvDownload.getAttribute('download');
+
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error('resposta ' + response.status);
+
+            const blobUrl = URL.createObjectURL(await response.blob());
+            const tempLink = document.createElement('a');
+
+            tempLink.href = blobUrl;
+            tempLink.download = fileName;
+            document.body.appendChild(tempLink);
+            tempLink.click();
+            tempLink.remove();
+
+            // Espera um pouco antes de liberar o endereco temporario, senao o download pode ser cancelado
+            setTimeout(() => URL.revokeObjectURL(blobUrl), 10000);
+        } catch (error) {
+            // Se algo der errado, abre o arquivo do jeito antigo para o visitante nao ficar sem nada
+            window.location.href = url;
+        }
+    });
+}
 
 /* No celular nao existe passar o mouse, entao um toque troca a foto pela logo.
    No computador o proprio :hover ja faz a troca, por isso o clique nao e ligado la. */

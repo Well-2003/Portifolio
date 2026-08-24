@@ -22,7 +22,7 @@
   --border-color: rgba(79, 172, 254, 0.18);
 
   /* Espacamento entre as secoes, ajuste aqui se quiser mais ou menos */
-  --section-padding: 9rem 4rem;
+  --section-padding: 6rem 3rem;
 
   /* Fontes e tamanhos de texto */
   --body-font: 'Poppins', sans-serif;
@@ -52,7 +52,7 @@
     --normal-font-size: 1rem;
     --small-font-size: .875rem;
     --smaller-font-size: .813rem;
-    --section-padding: 14rem 6rem;
+    --section-padding: 8rem 4rem;
   }
 }
 
@@ -76,7 +76,7 @@ input, textarea { font-family: var(--body-font); }
 /* Desativa as animacoes para quem prefere menos movimento */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  *, *::before, *::after { animation-duration: 0.01ms; transition-duration: 0.01ms; }
 }
 
 /* Classes reaproveitadas em varias secoes */
@@ -225,34 +225,75 @@ input, textarea { font-family: var(--body-font); }
   align-items: center;
   position: relative;
   box-shadow: 0 0 30px rgba(32, 120, 207, 0.4);
-  transition: background-color .45s ease, box-shadow .4s;
+  /* Na saida o fundo espera um pouco, senao o azul aparece antes da foto voltar */
+  transition: background-color .3s ease .15s, box-shadow .5s ease;
 }
-.home__image:hover { box-shadow: 0 0 45px rgba(79, 172, 254, 0.6); }
 /* A logo tem fundo preto, entao o circulo fica preto junto e a borda do arquivo some */
 .home__image:hover,
-.home__image.is-flipped { background-color: #000000; }
+.home__image.is-flipped {
+  background-color: #000000;
+  box-shadow: 0 0 50px rgba(79, 172, 254, 0.65);
+  transition: background-color .25s ease, box-shadow .5s ease;
+}
+
+/* Aro fino que acende junto com a troca */
+.home__image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  pointer-events: none;
+  transition: border-color .45s ease;
+}
+.home__image:hover::after,
+.home__image.is-flipped::after { border-color: rgba(79, 172, 254, 0.55); }
+
 /* Em telas de toque a troca acontece com um clique, entao vale mostrar a mãozinha */
 @media (hover: none) { .home__image { cursor: pointer; } }
 
-/* As duas imagens ficam uma sobre a outra e trocam com o mouse por cima */
+/* As duas imagens ficam uma sobre a outra e trocam com o mouse por cima.
+   A foto sai desfocando e a logo entra logo depois, assim as duas nunca
+   aparecem meio transparentes ao mesmo tempo. */
 .home__img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  transition: opacity .45s ease, transform .45s ease;
 }
-.home__img--photo { object-fit: cover; }
+.home__img--photo {
+  object-fit: cover;
+  filter: blur(0);
+  transition: opacity .35s ease .1s,
+              transform .5s cubic-bezier(.22, .61, .36, 1) .05s,
+              filter .35s ease .1s;
+}
 .home__img--logo {
   object-fit: contain;
   padding: 6%;
   opacity: 0;
-  transform: scale(.85);
+  transform: scale(.72) rotate(-5deg);
+  transition: opacity .25s ease,
+              transform .4s cubic-bezier(.4, 0, .6, 1);
 }
+
 .home__image:hover .home__img--photo,
-.home__image.is-flipped .home__img--photo { opacity: 0; transform: scale(1.08); }
+.home__image.is-flipped .home__img--photo {
+  opacity: 0;
+  transform: scale(1.15);
+  filter: blur(6px);
+  transition: opacity .25s ease,
+              transform .5s cubic-bezier(.4, 0, .6, 1),
+              filter .3s ease;
+}
 .home__image:hover .home__img--logo,
-.home__image.is-flipped .home__img--logo { opacity: 1; transform: scale(1); }
+.home__image.is-flipped .home__img--logo {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  /* A curva passa um pouco de 1 e volta, dando aquele encaixe no final */
+  transition: opacity .35s ease .12s,
+              transform .55s cubic-bezier(.34, 1.56, .64, 1) .08s;
+}
 
 .home__info { display: flex; justify-content: center; margin-top: 2rem; }
 
@@ -675,7 +716,7 @@ input, textarea { font-family: var(--body-font); }
 /* Ajustes para celular */
 @media screen and (max-width: 767px) {
   /* Espacamento menor no celular para o site nao parecer vazio */
-  .section { padding-block: 6rem 3rem; }
+  .section { padding-block: 4.5rem 2.5rem; }
 
   .home__container { padding-top: 4.5rem; }
   .home__image { width: 210px; height: 210px; }
