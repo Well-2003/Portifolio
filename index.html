@@ -28,7 +28,7 @@
         <nav class="nav container">
             <a href="#home" class="nav__logo">
                 <img src="assets/images/logo.png" alt="" class="nav__logo-img">
-                <span class="pixel-text">Wesley<span class="nav__logo-accent">.dev</span></span>
+                <span class="pixel-text">Wesley Silva</span>
             </a>
 
             <div class="nav__menu" id="nav-menu">
@@ -39,6 +39,7 @@
                     <li class="nav__item"><a href="#skills" class="nav__link" data-i18n="nav_skills">Habilidades</a></li>
                     <li class="nav__item"><a href="#projects" class="nav__link" data-i18n="nav_portfolio">Portfólio</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link" data-i18n="nav_contact">Contato</a></li>
+                    <li class="nav__item"><a href="#cv" class="nav__link" data-i18n="nav_cv">Currículo</a></li>
                 </ul>
 
                 <!-- Botao que fecha o menu no celular -->
@@ -75,10 +76,10 @@
 
                     <!-- Icones das redes sociais abaixo do nome -->
                     <div class="home__social">
-                        <a href="https://www.linkedin.com/in/wesley-santos-695318233" target="_blank" class="home__social-link" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/wesley-silva2003" target="_blank" rel="noopener" class="home__social-link" aria-label="LinkedIn">
                             <i class="ri-linkedin-box-line"></i>
                         </a>
-                        <a href="https://github.com/Wes-Silva2003" target="_blank" class="home__social-link" aria-label="GitHub">
+                        <a href="https://github.com/Well-2003" target="_blank" rel="noopener" class="home__social-link" aria-label="GitHub">
                             <i class="ri-github-line"></i>
                         </a>
                         <a href="https://wel-2003.itch.io/" target="_blank" class="home__social-link" aria-label="itch.io">
@@ -88,15 +89,15 @@
                 </div>
 
                 <div class="home__perfil">
-                    <div class="home__image">
-                        <img src="assets/images/logo.png" alt="Logo Wesley Silva" class="home__img">
+                    <!-- A foto aparece por padrao e da lugar a logo quando o mouse passa por cima -->
+                    <div class="home__image" id="home-image">
+                        <img src="assets/images/foto.jpeg" alt="Wesley Silva" class="home__img home__img--photo">
+                        <img src="assets/images/logo.png" alt="Logo Wesley Silva" class="home__img home__img--logo" aria-hidden="true">
                     </div>
                 </div>
 
                 <div class="home__info">
                     <div class="home__info-title">
-                        <span class="home__info-small" data-i18n="info_small">Desenvolvedor</span>
-
                         <!-- Texto com efeito de digitacao -->
                         <div class="home__typed-box">
                             <span class="pixel-gradient" id="typed"></span><span class="typed-cursor-pixel">▌</span>
@@ -114,22 +115,33 @@
 
         <!-- Secao sobre mim -->
         <section class="about section" id="about">
-            <div class="about__container container grid">
+            <div class="about__container container">
 
                 <div class="about__info">
                     <h2 class="section__title-1 about__title-left"><span data-i18n="about_title">Sobre Mim</span></h2>
                     <p class="about__description" data-i18n="bio">
-                        Meu nome é Wesley Silva e sou de São Paulo, Brasil. Estou no último ano do curso de Ciência da Computação no Centro Universitário Adventista de São Paulo (UNASP). Como programador e desenvolvedor de jogos, minha grande paixão é implementar minhas ideias em código e dar vida a novas mecânicas.
+                        Meu foco como desenvolvedor é construir sistemas que funcionam bem e que as pessoas gostem de usar. Tenho um carinho especial por arquitetura de código: gosto de organizar a estrutura antes de sair escrevendo, entender o "como" e o "porquê" de cada decisão e voltar depois para deixar tudo mais simples do que estava.
+                    </p>
+                    <p class="about__description" data-i18n="bio_2">
+                        Na prática, isso aparece dos dois lados do meu trabalho. No web, montando interfaces responsivas com HTML, CSS e JavaScript e ligando essa interface a uma lógica de backend em Python. Nos jogos, estruturando o comportamento dos personagens com máquinas de estado e ajustando os controles até a resposta parecer natural na mão de quem joga. Em todos eles, guardo o trabalho no GitHub desde o primeiro commit, porque é isso que me deixa experimentar sem medo de quebrar o que já funciona.
                     </p>
 
                     <ul class="about__list">
                         <li class="about__item">
-                            <i class="ri-graduation-cap-line"></i>
-                            <span><b data-i18n="about_edu_label">Formação:</b> <span data-i18n="about_edu_value">Ciência da Computação (UNASP)</span></span>
-                        </li>
-                        <li class="about__item">
                             <i class="ri-map-pin-line"></i>
                             <span><b data-i18n="about_loc_label">Localização:</b> São Paulo, Brasil</span>
+                        </li>
+                        <li class="about__item">
+                            <i class="ri-focus-3-line"></i>
+                            <span><b data-i18n="about_focus_label">Foco:</b> <span data-i18n="about_focus_value">Desenvolvimento web e de jogos</span></span>
+                        </li>
+                        <li class="about__item">
+                            <i class="ri-braces-line"></i>
+                            <span><b data-i18n="about_stack_label">Stack:</b> Godot / GDScript, Python, JavaScript, HTML, CSS, MySQL</span>
+                        </li>
+                        <li class="about__item">
+                            <i class="ri-translate-2"></i>
+                            <span><b data-i18n="about_lang_label">Idiomas:</b> <span data-i18n="about_lang_value">Português (nativo), Inglês (técnico), Espanhol (básico)</span></span>
                         </li>
                     </ul>
 
@@ -137,17 +149,9 @@
                         <a href="mailto:silva.wes2003@gmail.com" class="button">
                             <i class="ri-send-plane-line"></i> <span data-i18n="btn_contact">Entrar em contato</span>
                         </a>
-                        <!-- Quando tiver o arquivo cv.pdf, coloque na pasta do site e tire este botao do comentario
-                        <a href="cv.pdf" download class="button button--ghost">
-                            <i class="ri-download-line"></i> <span data-i18n="btn_cv">Baixar CV</span>
+                        <a href="#cv" class="button button--ghost">
+                            <i class="ri-file-text-line"></i> <span data-i18n="btn_cv">Baixar CV</span>
                         </a>
-                        -->
-                    </div>
-                </div>
-
-                <div class="about__perfil">
-                    <div class="about__image">
-                        <img src="assets/images/foto.jpeg" alt="Wesley Silva" class="about__img">
                     </div>
                 </div>
 
@@ -198,6 +202,48 @@
                         <div class="services__content">
                             <p class="services__description" data-i18n="serv_3_desc">
                                 Sites e páginas responsivas com HTML, CSS e JavaScript, além de personalização de temas WordPress e prototipagem no Figma.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Quarto servico -->
+                    <article class="services__card">
+                        <header class="services__header">
+                            <div class="services__icon"><i class="ri-node-tree"></i></div>
+                            <h3 class="services__name" data-i18n="serv_4_title">Arquitetura &amp; Máquinas de Estado</h3>
+                            <i class="ri-add-line services__arrow"></i>
+                        </header>
+                        <div class="services__content">
+                            <p class="services__description" data-i18n="serv_4_desc">
+                                Organização da estrutura do projeto com orientação a objetos, máquinas de estado e padrões de projeto, para que uma mecânica ou uma tela nova entre sem quebrar o que já estava funcionando.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Quinto servico -->
+                    <article class="services__card">
+                        <header class="services__header">
+                            <div class="services__icon"><i class="ri-github-line"></i></div>
+                            <h3 class="services__name" data-i18n="serv_5_title">Versionamento &amp; Publicação</h3>
+                            <i class="ri-add-line services__arrow"></i>
+                        </header>
+                        <div class="services__content">
+                            <p class="services__description" data-i18n="serv_5_desc">
+                                Fluxo de trabalho no GitHub: uma branch por funcionalidade, histórico de commits legível para quem chega depois e publicação do resultado no GitHub Pages ou no itch.io.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Sexto servico -->
+                    <article class="services__card">
+                        <header class="services__header">
+                            <div class="services__icon"><i class="ri-bug-line"></i></div>
+                            <h3 class="services__name" data-i18n="serv_6_title">Depuração &amp; Polimento</h3>
+                            <i class="ri-add-line services__arrow"></i>
+                        </header>
+                        <div class="services__content">
+                            <p class="services__description" data-i18n="serv_6_desc">
+                                Caçar o bug até a causa em vez de esconder o sintoma e, depois, cuidar do acabamento: tempo de resposta dos controles, feedback visual e os detalhes que fazem o site ou o jogo parecerem prontos.
                             </p>
                         </div>
                     </article>
@@ -359,7 +405,10 @@
                             <span class="projects__tag">Web</span>
                         </div>
                         <div class="projects__links">
-                            <a href="https://github.com/Wes-Silva2003/SimpStock" target="_blank" class="projects__link">
+                            <a href="https://well-2003.github.io/SimpStock_2.0/" target="_blank" rel="noopener" class="projects__link">
+                                <i class="ri-external-link-line"></i> <span data-i18n="link_demo">Ver online</span>
+                            </a>
+                            <a href="https://github.com/Well-2003/SimpStock_2.0" target="_blank" rel="noopener" class="projects__link">
                                 <i class="ri-github-line"></i> <span data-i18n="link_code">Código</span>
                             </a>
                         </div>
@@ -380,7 +429,7 @@
                             <span class="projects__tag">Compiladores</span>
                         </div>
                         <div class="projects__links">
-                            <a href="https://github.com/Wes-Silva2003/Compilador_Cirius" target="_blank" class="projects__link">
+                            <a href="https://github.com/Well-2003/Compilador_Cirius" target="_blank" rel="noopener" class="projects__link">
                                 <i class="ri-github-line"></i> <span data-i18n="link_code">Código</span>
                             </a>
                         </div>
@@ -389,7 +438,7 @@
             </div>
 
             <div class="projects__more container">
-                <a href="https://github.com/Wes-Silva2003" target="_blank" class="button button--ghost">
+                <a href="https://github.com/Well-2003" target="_blank" rel="noopener" class="button button--ghost">
                     <i class="ri-github-line"></i> <span data-i18n="btn_more_projects">Ver mais no GitHub</span>
                 </a>
             </div>
@@ -450,6 +499,51 @@
                 </form>
             </div>
         </section>
+
+        <!-- Secao de curriculo: o visitante escolhe o idioma e baixa a versao correspondente -->
+        <section class="cv section" id="cv">
+            <div class="container">
+                <h2 class="section__title-1"><span data-i18n="cv_title">Meu Currículo</span></h2>
+
+                <div class="cv__card">
+                    <p class="cv__lead" data-i18n="cv_lead">
+                        Escolha o idioma do currículo e baixe a versão em PDF.
+                    </p>
+
+                    <!-- Opcoes de idioma do arquivo -->
+                    <div class="cv__options" id="cv-options">
+                        <button type="button" class="cv__option cv-active" data-cv="pt" aria-pressed="true">
+                            <i class="ri-file-text-line cv__option-icon"></i>
+                            <span class="cv__option-text">
+                                <span class="cv__option-name">Português</span>
+                                <span class="cv__option-meta">PDF &middot; PT-BR</span>
+                            </span>
+                            <i class="ri-check-line cv__option-check"></i>
+                        </button>
+
+                        <button type="button" class="cv__option" data-cv="en" aria-pressed="false">
+                            <i class="ri-file-text-line cv__option-icon"></i>
+                            <span class="cv__option-text">
+                                <span class="cv__option-name">English</span>
+                                <span class="cv__option-meta">PDF &middot; EN</span>
+                            </span>
+                            <i class="ri-check-line cv__option-check"></i>
+                        </button>
+                    </div>
+
+                    <div class="cv__actions">
+                        <a href="assets/cv/curriculo-wesley-silva-pt.pdf" download="Curriculo-Wesley-Silva-PT.pdf" class="button cv__download" id="cv-download">
+                            <i class="ri-download-line"></i>
+                            <span data-i18n="cv_download">Baixar currículo</span>
+                            <span class="cv__badge pixel-text" id="cv-badge">PT</span>
+                        </a>
+                        <a href="assets/cv/curriculo-wesley-silva-pt.pdf" target="_blank" rel="noopener" class="button button--ghost cv__view" id="cv-view">
+                            <i class="ri-eye-line"></i> <span data-i18n="cv_view">Visualizar no navegador</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Rodape com links e redes sociais -->
@@ -461,11 +555,12 @@
                 <li><a href="#services" class="footer__link" data-i18n="nav_services">Serviços</a></li>
                 <li><a href="#skills" class="footer__link" data-i18n="nav_skills">Habilidades</a></li>
                 <li><a href="#projects" class="footer__link" data-i18n="nav_portfolio">Projetos</a></li>
+                <li><a href="#cv" class="footer__link" data-i18n="nav_cv">Currículo</a></li>
             </ul>
 
             <div class="footer__social">
-                <a href="https://www.linkedin.com/in/wesley-santos-695318233" target="_blank" class="footer__social-link" aria-label="LinkedIn"><i class="ri-linkedin-box-line"></i></a>
-                <a href="https://github.com/Wes-Silva2003" target="_blank" class="footer__social-link" aria-label="GitHub"><i class="ri-github-line"></i></a>
+                <a href="https://www.linkedin.com/in/wesley-silva2003" target="_blank" rel="noopener" class="footer__social-link" aria-label="LinkedIn"><i class="ri-linkedin-box-line"></i></a>
+                <a href="https://github.com/Well-2003" target="_blank" rel="noopener" class="footer__social-link" aria-label="GitHub"><i class="ri-github-line"></i></a>
                 <a href="https://wel-2003.itch.io/" target="_blank" class="footer__social-link" aria-label="itch.io"><i class="ri-gamepad-line"></i></a>
             </div>
 

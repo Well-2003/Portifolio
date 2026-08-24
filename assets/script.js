@@ -7,17 +7,21 @@ const translations = {
         nav_skills: "Habilidades",
         nav_portfolio: "Portfólio",
         nav_contact: "Contato",
+        nav_cv: "Currículo",
 
         greeting: "> Olá, eu sou",
-        info_small: "Desenvolvedor",
         btn_projects: "Ver projetos",
         btn_contact_short: "Contato",
 
         about_title: "Sobre Mim",
-        bio: "Meu nome é Wesley Silva e sou de São Paulo, Brasil. Estou no último ano do curso de Ciência da Computação no Centro Universitário Adventista de São Paulo (UNASP). Como programador e desenvolvedor de jogos, minha grande paixão é implementar minhas ideias em código e dar vida a novas mecânicas.",
-        about_edu_label: "Formação:",
-        about_edu_value: "Ciência da Computação (UNASP)",
+        bio: "Meu foco como desenvolvedor é construir sistemas que funcionam bem e que as pessoas gostem de usar. Tenho um carinho especial por arquitetura de código: gosto de organizar a estrutura antes de sair escrevendo, entender o \"como\" e o \"porquê\" de cada decisão e voltar depois para deixar tudo mais simples do que estava.",
+        bio_2: "Na prática, isso aparece dos dois lados do meu trabalho. No web, montando interfaces responsivas com HTML, CSS e JavaScript e ligando essa interface a uma lógica de backend em Python. Nos jogos, estruturando o comportamento dos personagens com máquinas de estado e ajustando os controles até a resposta parecer natural na mão de quem joga. Em todos eles, guardo o trabalho no GitHub desde o primeiro commit, porque é isso que me deixa experimentar sem medo de quebrar o que já funciona.",
         about_loc_label: "Localização:",
+        about_focus_label: "Foco:",
+        about_focus_value: "Desenvolvimento web e de jogos",
+        about_stack_label: "Stack:",
+        about_lang_label: "Idiomas:",
+        about_lang_value: "Português (nativo), Inglês (técnico), Espanhol (básico)",
         btn_contact: "Entrar em contato",
         btn_cv: "Baixar CV",
 
@@ -28,6 +32,12 @@ const translations = {
         serv_2_desc: "Lógica de servidor e sistemas em Python, modelagem e consultas em MySQL, automações e ferramentas de linha de comando.",
         serv_3_title: "Desenvolvimento Web",
         serv_3_desc: "Sites e páginas responsivas com HTML, CSS e JavaScript, além de personalização de temas WordPress e prototipagem no Figma.",
+        serv_4_title: "Arquitetura & Máquinas de Estado",
+        serv_4_desc: "Organização da estrutura do projeto com orientação a objetos, máquinas de estado e padrões de projeto, para que uma mecânica ou uma tela nova entre sem quebrar o que já estava funcionando.",
+        serv_5_title: "Versionamento & Publicação",
+        serv_5_desc: "Fluxo de trabalho no GitHub: uma branch por funcionalidade, histórico de commits legível para quem chega depois e publicação do resultado no GitHub Pages ou no itch.io.",
+        serv_6_title: "Depuração & Polimento",
+        serv_6_desc: "Caçar o bug até a causa em vez de esconder o sintoma e, depois, cuidar do acabamento: tempo de resposta dos controles, feedback visual e os detalhes que fazem o site ou o jogo parecerem prontos.",
 
         skills_title: "Habilidades",
         work_title: "Meus Projetos",
@@ -39,12 +49,13 @@ const translations = {
         cat_platform: "Plataforma/Ação",
         cat_web: "Desenvolvimento Web",
         cat_backend: "Backend",
-        proj_1_desc: "Projeto de game desenvolvido com foco em exploração e combate.",
-        proj_2_desc: "Jogo de plataforma 2D em pixel art com mecânicas de combate clássicas.",
-        proj_3_desc: "Sistema de gerenciamento de estoque para aplicações web.",
-        proj_4_desc: "Desenvolvimento de um compilador para a linguagem Cirius.",
+        proj_1_desc: "Jogo de ação 2D com lógica exclusiva para cada inimigo, mecânicas de combate, sistema de espólios e controle preciso das animações de todas as entidades.",
+        proj_2_desc: "Jogo de plataforma 2D em pixel art com mecânicas de combate clássicas e controles responsivos.",
+        proj_3_desc: "Sistema de gerenciamento de estoque com cadastro de produtos e usuários, dados salvos em JSON e a lógica de backend ligada a uma interface funcional.",
+        proj_4_desc: "Desenvolvimento de um compilador para a linguagem Cirius, das etapas de análise até a geração do resultado.",
         link_play: "Jogar",
         link_code: "Código",
+        link_demo: "Ver online",
         btn_more_projects: "Ver mais no GitHub",
 
         contact_title: "Fale Comigo",
@@ -59,13 +70,18 @@ const translations = {
         form_success: "Mensagem enviada com sucesso ✅",
         form_error: "Erro ao enviar. Tente pelo e-mail direto ❌",
 
+        cv_title: "Meu Currículo",
+        cv_lead: "Escolha o idioma do currículo e baixe a versão em PDF.",
+        cv_download: "Baixar currículo",
+        cv_view: "Visualizar no navegador",
+
         footer_rights: "Todos os direitos reservados.",
 
         game_hint: "Setas ou WASD para mover, espaco para atirar, ESC para sair",
         quiz_title: "Voce foi atingido!",
         over_survived: "Voce sobreviveu por {s} segundos",
         game_server_alert: "O jogo precisa ser aberto por um servidor (como o GitHub Pages ou o Live Server) para carregar as perguntas.",
-        typed_words: ["Programador", "Game Dev"]
+        typed_words: ["Desenvolvedor Web", "Desenvolvedor de Jogos"]
     },
     en: {
         nav_home: "Home",
@@ -74,17 +90,21 @@ const translations = {
         nav_skills: "Skills",
         nav_portfolio: "Portfolio",
         nav_contact: "Contact",
+        nav_cv: "Resume",
 
         greeting: "> Hi, I'm",
-        info_small: "Developer",
         btn_projects: "View projects",
         btn_contact_short: "Contact",
 
         about_title: "About Me",
-        bio: "My name is Wesley Silva and I am from São Paulo, Brazil. I am in my final year of the Computer Science course at the Adventist University Center of São Paulo (UNASP). As a programmer and game developer, my great passion is to implement my ideas in code and bring new mechanics to life.",
-        about_edu_label: "Education:",
-        about_edu_value: "Computer Science (UNASP)",
+        bio: "My focus as a developer is building systems that work well and that people enjoy using. I have a soft spot for code architecture: I like to organize the structure before writing anything, to understand the \"how\" and the \"why\" behind each decision, and to come back later to make it simpler than it was.",
+        bio_2: "In practice, that shows up on both sides of my work. On the web, building responsive interfaces with HTML, CSS and JavaScript and wiring them to backend logic in Python. In games, structuring character behaviour with state machines and tuning the controls until the response feels natural in the player's hands. In all of them, I keep my work on GitHub from the first commit, because that is what lets me experiment without fear of breaking what already works.",
         about_loc_label: "Location:",
+        about_focus_label: "Focus:",
+        about_focus_value: "Web and game development",
+        about_stack_label: "Stack:",
+        about_lang_label: "Languages:",
+        about_lang_value: "Portuguese (native), English (technical), Spanish (basic)",
         btn_contact: "Contact Me",
         btn_cv: "Download CV",
 
@@ -95,6 +115,12 @@ const translations = {
         serv_2_desc: "Server logic and systems in Python, MySQL modeling and queries, automations and command-line tools.",
         serv_3_title: "Web Development",
         serv_3_desc: "Responsive websites and pages with HTML, CSS and JavaScript, plus WordPress theme customization and Figma prototyping.",
+        serv_4_title: "Architecture & State Machines",
+        serv_4_desc: "Structuring a project with object-oriented programming, state machines and design patterns, so a new mechanic or a new screen can be added without breaking what already worked.",
+        serv_5_title: "Version Control & Deployment",
+        serv_5_desc: "A GitHub workflow: one branch per feature, a commit history that is readable for whoever comes next, and publishing the result on GitHub Pages or itch.io.",
+        serv_6_title: "Debugging & Polish",
+        serv_6_desc: "Chasing a bug down to its cause instead of hiding the symptom, then taking care of the finish: control response time, visual feedback and the details that make a site or a game feel done.",
 
         skills_title: "Skills",
         work_title: "My Projects",
@@ -106,12 +132,13 @@ const translations = {
         cat_platform: "Platform/Action",
         cat_web: "Web Dev",
         cat_backend: "Backend",
-        proj_1_desc: "Game project developed with a focus on exploration and combat.",
-        proj_2_desc: "2D pixel art platformer with classic combat mechanics.",
-        proj_3_desc: "Inventory management system for web applications.",
-        proj_4_desc: "Development of a compiler for the Cirius language.",
+        proj_1_desc: "2D action game with unique logic for each enemy, combat mechanics, a loot system and precise animation control for every entity.",
+        proj_2_desc: "2D pixel art platformer with classic combat mechanics and responsive controls.",
+        proj_3_desc: "Inventory management system handling product and user records, data stored in JSON and backend logic wired to a working interface.",
+        proj_4_desc: "Development of a compiler for the Cirius language, from the analysis stages to generating the output.",
         link_play: "Play",
         link_code: "Code",
+        link_demo: "Live site",
         btn_more_projects: "See more on GitHub",
 
         contact_title: "Get In Touch",
@@ -126,13 +153,18 @@ const translations = {
         form_success: "Message sent successfully ✅",
         form_error: "Failed to send. Try emailing me directly ❌",
 
+        cv_title: "My Resume",
+        cv_lead: "Pick the language of the resume and download the PDF version.",
+        cv_download: "Download resume",
+        cv_view: "Open in the browser",
+
         footer_rights: "All rights reserved.",
 
         game_hint: "Arrows or WASD to move, space to shoot, ESC to quit",
         quiz_title: "You got hit!",
         over_survived: "You survived for {s} seconds",
         game_server_alert: "The game needs to run from a server (like GitHub Pages or Live Server) to load the questions.",
-        typed_words: ["Programmer", "Game Dev"]
+        typed_words: ["Web Developer", "Game Developer"]
     },
     es: {
         nav_home: "Inicio",
@@ -141,17 +173,21 @@ const translations = {
         nav_skills: "Habilidades",
         nav_portfolio: "Portafolio",
         nav_contact: "Contacto",
+        nav_cv: "Currículum",
 
         greeting: "> Hola, soy",
-        info_small: "Desarrollador",
         btn_projects: "Ver proyectos",
         btn_contact_short: "Contacto",
 
         about_title: "Sobre Mí",
-        bio: "Mi nombre es Wesley Silva y soy de São Paulo, Brasil. Estoy en mi último año de la carrera de Ciencias de la Computación en el Centro Universitario Adventista de São Paulo (UNASP). Como programador y desarrollador de juegos, mi gran pasión es implementar mis ideas en código y dar vida a nuevas mecánicas.",
-        about_edu_label: "Formación:",
-        about_edu_value: "Ciencias de la Computación (UNASP)",
+        bio: "Mi foco como desarrollador es construir sistemas que funcionen bien y que las personas disfruten usar. Tengo un cariño especial por la arquitectura del código: me gusta organizar la estructura antes de empezar a escribir, entender el \"cómo\" y el \"porqué\" de cada decisión y volver después para dejarlo todo más simple de lo que estaba.",
+        bio_2: "En la práctica, eso aparece en los dos lados de mi trabajo. En la web, armando interfaces responsivas con HTML, CSS y JavaScript y conectándolas a una lógica de backend en Python. En los juegos, estructurando el comportamiento de los personajes con máquinas de estados y ajustando los controles hasta que la respuesta se sienta natural en las manos de quien juega. En todos ellos guardo el trabajo en GitHub desde el primer commit, porque es lo que me deja experimentar sin miedo a romper lo que ya funciona.",
         about_loc_label: "Ubicación:",
+        about_focus_label: "Enfoque:",
+        about_focus_value: "Desarrollo web y de juegos",
+        about_stack_label: "Stack:",
+        about_lang_label: "Idiomas:",
+        about_lang_value: "Portugués (nativo), Inglés (técnico), Español (básico)",
         btn_contact: "Contáctame",
         btn_cv: "Descargar CV",
 
@@ -162,6 +198,12 @@ const translations = {
         serv_2_desc: "Lógica de servidor y sistemas en Python, modelado y consultas en MySQL, automatizaciones y herramientas de línea de comandos.",
         serv_3_title: "Desarrollo Web",
         serv_3_desc: "Sitios y páginas responsivas con HTML, CSS y JavaScript, además de personalización de temas WordPress y prototipado en Figma.",
+        serv_4_title: "Arquitectura & Máquinas de Estados",
+        serv_4_desc: "Organización de la estructura del proyecto con programación orientada a objetos, máquinas de estados y patrones de diseño, para que una mecánica o una pantalla nueva entre sin romper lo que ya funcionaba.",
+        serv_5_title: "Versionado & Publicación",
+        serv_5_desc: "Flujo de trabajo en GitHub: una rama por funcionalidad, un historial de commits legible para quien llegue después y publicación del resultado en GitHub Pages o itch.io.",
+        serv_6_title: "Depuración & Pulido",
+        serv_6_desc: "Perseguir el bug hasta su causa en vez de esconder el síntoma y, después, cuidar el acabado: tiempo de respuesta de los controles, feedback visual y los detalles que hacen que el sitio o el juego se sientan terminados.",
 
         skills_title: "Habilidades",
         work_title: "Mis Proyectos",
@@ -173,12 +215,13 @@ const translations = {
         cat_platform: "Plataforma/Acción",
         cat_web: "Desarrollo Web",
         cat_backend: "Backend",
-        proj_1_desc: "Proyecto de juego desarrollado con enfoque en exploración y combate.",
-        proj_2_desc: "Juego de plataformas 2D en pixel art con mecánicas de combate clásicas.",
-        proj_3_desc: "Sistema de gestión de inventario para aplicaciones web.",
-        proj_4_desc: "Desarrollo de un compilador para el lenguaje Cirius.",
+        proj_1_desc: "Juego de acción 2D con lógica exclusiva para cada enemigo, mecánicas de combate, sistema de botín y control preciso de las animaciones de todas las entidades.",
+        proj_2_desc: "Juego de plataformas 2D en pixel art con mecánicas de combate clásicas y controles responsivos.",
+        proj_3_desc: "Sistema de gestión de inventario con registro de productos y usuarios, datos guardados en JSON y la lógica de backend conectada a una interfaz funcional.",
+        proj_4_desc: "Desarrollo de un compilador para el lenguaje Cirius, desde las etapas de análisis hasta la generación del resultado.",
         link_play: "Jugar",
         link_code: "Código",
+        link_demo: "Ver en línea",
         btn_more_projects: "Ver más en GitHub",
 
         contact_title: "Háblame",
@@ -193,13 +236,18 @@ const translations = {
         form_success: "Mensaje enviado con éxito ✅",
         form_error: "Error al enviar. Escríbeme directo por correo ❌",
 
+        cv_title: "Mi Currículum",
+        cv_lead: "Elige el idioma del currículum y descarga la versión en PDF.",
+        cv_download: "Descargar currículum",
+        cv_view: "Abrir en el navegador",
+
         footer_rights: "Todos los derechos reservados.",
 
         game_hint: "Flechas o WASD para mover, espacio para disparar, ESC para salir",
         quiz_title: "Te golpearon!",
         over_survived: "Sobreviviste {s} segundos",
         game_server_alert: "El juego necesita abrirse desde un servidor (como GitHub Pages o Live Server) para cargar las preguntas.",
-        typed_words: ["Programador", "Game Dev"]
+        typed_words: ["Desarrollador Web", "Desarrollador de Juegos"]
     }
 };
 
@@ -243,6 +291,53 @@ function changeLanguage(lang) {
 
     // Recomeca o efeito de digitacao no idioma escolhido
     startTyped(lang);
+
+    // Ja deixa selecionado o curriculo mais proximo do idioma do site
+    // (nao existe versao em espanhol, entao o visitante em ES recebe a inglesa)
+    setCvLang(lang === 'pt' ? 'pt' : 'en');
+}
+
+/* Secao do curriculo: cada idioma aponta para um arquivo PDF diferente */
+const cvFiles = {
+    pt: { file: 'assets/cv/curriculo-wesley-silva-pt.pdf', name: 'Curriculo-Wesley-Silva-PT.pdf', badge: 'PT' },
+    en: { file: 'assets/cv/resume-wesley-silva-en.pdf', name: 'Resume-Wesley-Silva-EN.pdf', badge: 'EN' }
+};
+
+const cvOptions = document.querySelectorAll('.cv__option'),
+      cvDownload = document.getElementById('cv-download'),
+      cvView = document.getElementById('cv-view'),
+      cvBadge = document.getElementById('cv-badge');
+
+/* Aponta os botoes de baixar e visualizar para o arquivo do idioma escolhido */
+function setCvLang(lang) {
+    const cv = cvFiles[lang];
+    if (!cv || !cvDownload) return;
+
+    cvDownload.setAttribute('href', cv.file);
+    cvDownload.setAttribute('download', cv.name);
+    if (cvView) cvView.setAttribute('href', cv.file);
+    if (cvBadge) cvBadge.textContent = cv.badge;
+
+    // Marca visualmente qual das duas opcoes esta ativa
+    cvOptions.forEach(option => {
+        const isActive = option.getAttribute('data-cv') === lang;
+        option.classList.toggle('cv-active', isActive);
+        option.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+}
+
+cvOptions.forEach(option => {
+    option.addEventListener('click', () => setCvLang(option.getAttribute('data-cv')));
+});
+
+/* No celular nao existe passar o mouse, entao um toque troca a foto pela logo.
+   No computador o proprio :hover ja faz a troca, por isso o clique nao e ligado la. */
+const homeImage = document.getElementById('home-image');
+
+if (homeImage && window.matchMedia('(hover: none)').matches) {
+    homeImage.addEventListener('click', () => {
+        homeImage.classList.toggle('is-flipped');
+    });
 }
 
 // O site comeca em portugues
@@ -410,14 +505,16 @@ const sr = ScrollReveal({
 sr.reveal(`.home__data, .footer__container`);
 sr.reveal(`.home__info`, { delay: 600, origin: 'right' });
 sr.reveal(`.home__image`, { delay: 600, origin: 'bottom' });
-sr.reveal(`.services__card`, { origin: 'bottom', interval: 150 });
+sr.reveal(`.services__card`, { origin: 'bottom', interval: 100 });
 sr.reveal(`.skills__content:nth-child(1)`, { origin: 'left' });
 sr.reveal(`.skills__content:nth-child(2)`, { origin: 'bottom' });
 sr.reveal(`.skills__content:nth-child(3)`, { origin: 'right' });
 sr.reveal(`.projects__filters`, { origin: 'top' });
 sr.reveal(`.projects__card`, { origin: 'bottom', interval: 120 });
-sr.reveal(`.about__info, .contact__data-box`, { origin: 'left' });
-sr.reveal(`.about__perfil, .contact__form`, { origin: 'right' });
+sr.reveal(`.about__info`, { origin: 'bottom' });
+sr.reveal(`.contact__data-box`, { origin: 'left' });
+sr.reveal(`.contact__form`, { origin: 'right' });
+sr.reveal(`.cv__card`, { origin: 'bottom' });
 
 
 /* Mini game de asteroides escondido no foguete.
