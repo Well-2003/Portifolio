@@ -7,6 +7,7 @@ const TRANSLATIONS = {
 
     nav_about: 'Sobre',
     nav_projects: 'Projetos',
+    nav_wip: 'Em andamento',
     nav_cv: 'Currículo',
     nav_contact: 'Contato',
     nav_open: 'Abrir menu',
@@ -20,7 +21,6 @@ const TRANSLATIONS = {
     hero_lead: 'Oi, eu sou o Wesley. <b>Obrigado por dar uma passada por aqui.</b> Este é o canto onde eu guardo as coisas que ando construindo, com o porquê de cada uma delas. Fique à vontade para abrir, mexer e, se algo te interessar, me mandar uma mensagem.',
     hero_btn_projects: 'Ver os projetos',
     hero_btn_contact: 'Falar comigo',
-    swap_hint: 'passe o mouse ou toque',
 
     about_title: 'Sobre',
     about_heading: 'Quem sou eu?',
@@ -40,6 +40,9 @@ const TRANSLATIONS = {
     filter_games: 'Jogos',
     filter_web: 'Web',
     filter_backend: 'Backend',
+
+    wip_title: 'Em andamento',
+    wip_hint: 'Clique em um para abrir a descrição',
 
     cv_title: 'Currículo em PDF',
     cv_text: 'Formação, experiência e contato em uma página. Escolha o idioma.',
@@ -64,6 +67,9 @@ const TRANSLATIONS = {
     form_err_email: 'Confira o e-mail: parece faltar algo antes ou depois do @.',
     form_err_msg: 'Conte um pouco mais, com pelo menos 10 caracteres.',
     form_ok: 'Abrindo seu app de e-mail com a mensagem pronta.',
+    form_sending: 'Enviando...',
+    form_sent: 'Mensagem enviada. Respondo assim que puder.',
+    form_fail: 'O envio falhou. Abri seu app de e-mail com a mensagem pronta.',
     mail_subject: 'Contato pelo portfólio: ',
 
     footer_role: 'Desenvolvedor de jogos / web',
@@ -84,6 +90,7 @@ const TRANSLATIONS = {
 
     nav_about: 'About',
     nav_projects: 'Projects',
+    nav_wip: 'In progress',
     nav_cv: 'Resume',
     nav_contact: 'Contact',
     nav_open: 'Open menu',
@@ -97,7 +104,6 @@ const TRANSLATIONS = {
     hero_lead: "Hi, I'm Wesley. <b>Thanks for stopping by.</b> This is the corner where I keep the things I've been building, along with the why behind each one. Feel free to open them, poke around and, if something catches your interest, send me a message.",
     hero_btn_projects: 'See the projects',
     hero_btn_contact: 'Get in touch',
-    swap_hint: 'hover or tap',
 
     about_title: 'About',
     about_heading: 'Who am I?',
@@ -117,6 +123,9 @@ const TRANSLATIONS = {
     filter_games: 'Games',
     filter_web: 'Web',
     filter_backend: 'Backend',
+
+    wip_title: 'In progress',
+    wip_hint: 'Click one to open the description',
 
     cv_title: 'Resume in PDF',
     cv_text: 'Education, experience and contact on one page. Pick the language.',
@@ -141,6 +150,9 @@ const TRANSLATIONS = {
     form_err_email: 'Check the email: something seems to be missing before or after the @.',
     form_err_msg: 'Tell me a bit more, at least 10 characters.',
     form_ok: 'Opening your email app with the message ready.',
+    form_sending: 'Sending...',
+    form_sent: 'Message sent. I will reply as soon as I can.',
+    form_fail: 'Sending failed. I opened your email app with the message ready.',
     mail_subject: 'Contact from the portfolio: ',
 
     footer_role: 'Game / web developer',
@@ -161,6 +173,7 @@ const TRANSLATIONS = {
 
     nav_about: 'Sobre mí',
     nav_projects: 'Proyectos',
+    nav_wip: 'En curso',
     nav_cv: 'Currículum',
     nav_contact: 'Contacto',
     nav_open: 'Abrir menú',
@@ -174,7 +187,6 @@ const TRANSLATIONS = {
     hero_lead: 'Hola, soy Wesley. <b>Gracias por pasar por aquí.</b> Este es el rincón donde guardo las cosas que he estado construyendo, con el porqué de cada una. Siéntete libre de abrirlas, curiosear y, si algo te interesa, enviarme un mensaje.',
     hero_btn_projects: 'Ver los proyectos',
     hero_btn_contact: 'Hablar conmigo',
-    swap_hint: 'pasa el cursor o toca',
 
     about_title: 'Sobre mí',
     about_heading: '¿Quién soy?',
@@ -194,6 +206,9 @@ const TRANSLATIONS = {
     filter_games: 'Juegos',
     filter_web: 'Web',
     filter_backend: 'Backend',
+
+    wip_title: 'En curso',
+    wip_hint: 'Haz clic en uno para abrir la descripción',
 
     cv_title: 'Currículum en PDF',
     cv_text: 'Formación, experiencia y contacto en una página. Elige el idioma.',
@@ -218,6 +233,9 @@ const TRANSLATIONS = {
     form_err_email: 'Revisa el correo: parece faltar algo antes o después de la @.',
     form_err_msg: 'Cuéntame un poco más, con al menos 10 caracteres.',
     form_ok: 'Abriendo tu app de correo con el mensaje listo.',
+    form_sending: 'Enviando...',
+    form_sent: 'Mensaje enviado. Respondo en cuanto pueda.',
+    form_fail: 'El envío falló. Abrí tu app de correo con el mensaje listo.',
     mail_subject: 'Contacto desde el portafolio: ',
 
     footer_role: 'Desarrollador de juegos / web',
