@@ -7,7 +7,12 @@
 const PROJECTS = [
   {
     id: 'singra',
-    logo: 'https://raw.githubusercontent.com/Well-2003/Singra_Finance/main/frontend/public/favicon.svg',
+    images: [
+      {src: 'assets/images/projects/singra/inicio.jpg', cap: {pt: 'A página inicial', en: 'The landing page', es: 'La página de inicio'}},
+      {src: 'assets/images/projects/singra/painel.jpg', cap: {pt: 'O painel, depois de entrar', en: 'The dashboard, after signing in', es: 'El panel, después de entrar'}},
+      {src: 'assets/images/projects/singra/graficos.jpg', cap: {pt: 'Onde o dinheiro foi', en: 'Where the money went', es: 'Adónde se fue el dinero'}}
+    ],
+    logo: 'assets/images/projects/singra/logo.svg',
     cats: ['web', 'backend'],
     title: 'Singra', color: '#9CAF88', text: '#14120F',
     kind: {
@@ -37,8 +42,10 @@ const PROJECTS = [
         list: {
           pt: [
             'Registro em três toques: valor, categoria, confirmar. Teclado numérico próprio que forma R$ 45,90 enquanto a pessoa digita 4590.',
-            'O mês é o da pessoa, não o do calendário: quem recebe no dia 5 configura o dia 5 e todos os cálculos seguem esse ciclo.',
+            'O mês é o da pessoa, não o do calendário: quem recebe no dia 5 configura o dia 5 e todos os cálculos seguem esse ciclo. O dia escolhido vai até 28, senão o mês não existiria em fevereiro.',
             'Painel que abre com um número grande, em vez de uma lista de lançamentos.',
+            'Todo dinheiro é decimal exato, no código e no banco. Com número de ponto flutuante, 0,1 mais 0,2 não dá 0,3, e o centavo que sobra vira erro no total de quem confiou no app.',
+            'Uma compra parcelada vira um lançamento por mês, e o resto da divisão fica na última parcela. Sem isso, 100 em 3 vezes seria 33,33 três vezes e um centavo sumiria.',
             'Planejamento por categoria com sugestão automática pela regra 50/30/20 e cópia do mês anterior.',
             'Metas com círculo de progresso, meta especial de investimento e calendário de contas projetado meses à frente.',
             'Sete gráficos, cada um com título em forma de pergunta e uma frase respondendo o que ele mostra.',
@@ -47,8 +54,10 @@ const PROJECTS = [
           ],
           en: [
             'Logging in three taps: amount, category, confirm. A custom number pad that builds R$ 45,90 as the person types 4590.',
-            "The month is the person's, not the calendar's: whoever gets paid on the 5th sets the 5th, and every calculation follows that cycle.",
+            "The month is the person's, not the calendar's: whoever gets paid on the 5th sets the 5th, and every calculation follows that cycle. The chosen day goes up to 28, otherwise the month would not exist in February.",
             'A dashboard that opens with one big number instead of a list of transactions.',
+            'Every amount is an exact decimal, in the code and in the database. With floating point, 0.1 plus 0.2 is not 0.3, and the leftover cent becomes an error in the total of someone who trusted the app.',
+            'A purchase in instalments becomes one entry per month, and the remainder of the division goes into the last one. Without that, 100 in 3 would be 33.33 three times and a cent would vanish.',
             'Per-category planning with automatic suggestions based on the 50/30/20 rule and copying from the previous month.',
             'Goals with a progress ring, a special investment goal and a bills calendar projected months ahead.',
             'Seven charts, each with a title phrased as a question and a sentence answering what it shows.',
@@ -57,8 +66,10 @@ const PROJECTS = [
           ],
           es: [
             'Registro en tres toques: valor, categoría, confirmar. Un teclado numérico propio que forma R$ 45,90 mientras la persona escribe 4590.',
-            'El mes es el de la persona, no el del calendario: quien cobra el día 5 configura el día 5 y todos los cálculos siguen ese ciclo.',
+            'El mes es el de la persona, no el del calendario: quien cobra el día 5 configura el día 5 y todos los cálculos siguen ese ciclo. El día elegido llega hasta el 28, si no el mes no existiría en febrero.',
             'Un panel que abre con un número grande, en lugar de una lista de movimientos.',
+            'Todo el dinero es decimal exacto, en el código y en la base. Con punto flotante, 0,1 más 0,2 no da 0,3, y el centavo que sobra se vuelve error en el total de quien confió en la app.',
+            'Una compra en cuotas se vuelve un registro por mes, y el resto de la división queda en la última cuota. Sin eso, 100 en 3 sería 33,33 tres veces y un centavo desaparecería.',
             'Planificación por categoría con sugerencia automática según la regla 50/30/20 y copia del mes anterior.',
             'Metas con círculo de progreso, meta especial de inversión y calendario de cuentas proyectado meses adelante.',
             'Siete gráficos, cada uno con un título en forma de pregunta y una frase que responde lo que muestra.',
@@ -85,7 +96,12 @@ const PROJECTS = [
 
   {
     id: 'simpstock',
-    logo: 'https://raw.githubusercontent.com/Well-2003/SimpStock_2.0/main/src/imagens/logo%20simpstock.png',
+    images: [
+      {src: 'assets/images/projects/simpstock/inicio.jpg', cap: {pt: 'A página inicial', en: 'The landing page', es: 'La página de inicio'}},
+      {src: 'assets/images/projects/simpstock/painel.jpg', cap: {pt: 'O painel, depois de entrar', en: 'The dashboard, after signing in', es: 'El panel, después de entrar'}},
+      {src: 'assets/images/projects/simpstock/estoque.jpg', cap: {pt: 'A lista de estoque', en: 'The stock list', es: 'La lista de inventario'}}
+    ],
+    logo: 'assets/images/projects/simpstock/logo.png',
     cats: ['web', 'backend'],
     title: 'SimpStock', color: '#0077B6', text: '#FFFFFF',
     kind: {
@@ -111,28 +127,28 @@ const PROJECTS = [
         }
       },
       {
-        label: {pt: 'O que entrega', en: 'What it delivers', es: 'Lo que ofrece'},
+        label: {pt: 'Decisões que sustentam isso', en: 'Decisions that back it up', es: 'Decisiones que lo sostienen'},
         list: {
           pt: [
-            'Cadastro de produtos com nome, marca, validade, código, quantidade, referência e localização.',
-            'Listagem com ordenação por qualquer coluna, busca, filtros por situação e edição ou exclusão em massa.',
-            'Painel com total de produtos, itens sem estoque, estoque baixo e itens vencidos ou próximos do vencimento.',
+            'Cadastro só com o que um lojista realmente anota: nome, marca, validade, código, quantidade, referência e localização.',
+            'Painel que abre mostrando o que pede atenção: total de produtos, itens sem estoque, estoque baixo e vencidos ou perto de vencer.',
+            'Lista com ordenação por qualquer coluna, busca e filtros por situação, e edição ou exclusão de vários produtos de uma vez.',
             'Cadastro e login com validação de senha em tempo real, hash, sessão por token assinado e painel administrativo.',
-            'Site institucional com central de ajuda, perguntas frequentes e boas práticas de controle de estoque.'
+            'Central de ajuda, perguntas frequentes e boas práticas de estoque dentro do próprio site, para ninguém precisar de treinamento.'
           ],
           en: [
-            'Product registration with name, brand, expiry date, code, quantity, reference and location.',
-            'A listing sortable by any column, with search, status filters and bulk editing or deletion.',
-            'A dashboard with total products, out-of-stock items, low stock and items expired or close to expiring.',
+            'Registration with only what a shop owner actually writes down: name, brand, expiry date, code, quantity, reference and location.',
+            'A dashboard that opens with what needs attention: total products, out-of-stock items, low stock and items expired or close to expiring.',
+            'A list sortable by any column, with search and status filters, and editing or deleting several products at once.',
             'Sign-up and login with real-time password validation, hashing, signed-token sessions and an admin panel.',
-            'An institutional site with a help center, FAQ and inventory control best practices.'
+            'A help center, FAQ and stock best practices inside the site itself, so nobody needs training.'
           ],
           es: [
-            'Registro de productos con nombre, marca, fecha de vencimiento, código, cantidad, referencia y ubicación.',
-            'Listado con ordenación por cualquier columna, búsqueda, filtros por estado y edición o eliminación masiva.',
-            'Panel con total de productos, artículos sin stock, stock bajo y artículos vencidos o próximos a vencer.',
+            'Registro solo con lo que un comerciante realmente anota: nombre, marca, fecha de vencimiento, código, cantidad, referencia y ubicación.',
+            'Un panel que abre mostrando lo que requiere atención: total de productos, artículos sin stock, stock bajo y vencidos o próximos a vencer.',
+            'Lista con ordenación por cualquier columna, búsqueda y filtros por estado, y edición o eliminación de varios productos a la vez.',
             'Registro e inicio de sesión con validación de contraseña en tiempo real, hash, sesión por token firmado y panel administrativo.',
-            'Sitio institucional con centro de ayuda, preguntas frecuentes y buenas prácticas de control de inventario.'
+            'Centro de ayuda, preguntas frecuentes y buenas prácticas de inventario dentro del propio sitio, para que nadie necesite capacitación.'
           ]
         }
       },
@@ -207,6 +223,30 @@ const PROJECTS = [
             'Gramática completa publicada en EBNF junto con el código.'
           ]
         }
+      },
+      {
+        label: {pt: 'A linguagem, e o C que ela vira', en: 'The language, and the C it becomes', es: 'El lenguaje, y el C en que se convierte'},
+        // Exemplo real: sai do tests/funcoes.cir do repositorio e passa pelo compilador de verdade
+        code: {
+          left: {name: 'fatorial.cir', body: `func fatorial(n) {
+    if n <= 1 {
+        return 1;
+    }
+    return n * fatorial(n - 1);
+}`},
+          right: {name: 'fatorial.c', body: `long fatorial(long n) {
+    long t1 = 0, t2 = 0, t3 = 0, t4 = 0;
+
+    t1 = (n <= 1);
+    if (!((t1) != 0)) goto END_IF1;
+    return 1;
+END_IF1:;
+    t3 = n - 1;
+    t2 = fatorial(t3);
+    t4 = n * t2;
+    return t4;
+}`}
+        }
       }
     ],
     stack: ['Python 3.8+', 'EBNF', {pt: 'Transpilação para C', en: 'Transpiling to C', es: 'Transpilación a C'}],
@@ -217,6 +257,11 @@ const PROJECTS = [
 
   {
     id: 'sabedoria',
+    images: [
+      {src: 'assets/images/projects/desafio_da_sabedoria/tabuleiro.png', cap: {pt: 'O tabuleiro em partida', en: 'The board mid-game', es: 'El tablero en partida'}},
+      {src: 'assets/images/projects/desafio_da_sabedoria/roleta.png', cap: {pt: 'A roleta de 1 a 8', en: 'The 1-to-8 spinner', es: 'La ruleta del 1 al 8'}},
+      {src: 'assets/images/projects/desafio_da_sabedoria/pergunta.png', cap: {pt: 'A pergunta sorteada', en: 'The drawn question', es: 'La pregunta sorteada'}}
+    ],
     icon: 'ri-dice-line',
     cats: ['jogo', 'web'],
     title: 'Desafio da Sabedoria', color: '#A78BFA', text: '#14120F',
@@ -275,65 +320,117 @@ const PROJECTS = [
 
   {
     id: 'ronin',
-    logo: 'assets/images/projects/crimson-ronin-icon.png',
+    logo: 'assets/images/projects/crimson_ronin/icone.png',
     logoFill: true, // icone redondo que ocupa o quadrado inteiro, sem fundo branco
     cats: ['jogo'],
     title: 'Crimson Ronin', color: '#B4332F', text: '#FFFFFF',
-    image: 'https://img.itch.zone/aW1nLzI2MDYxMzgwLnBuZw==/original/mZSQst.png',
+    images: [
+      {src: 'assets/images/projects/crimson_ronin/capa.png', cap: {pt: 'A capa do jogo na itch.io', en: 'The game cover on itch.io', es: 'La portada del juego en itch.io'}},
+      {src: 'assets/images/projects/crimson_ronin/chefe-demonio.png', cap: {pt: 'O chefe demônio', en: 'The demon boss', es: 'El jefe demonio'}},
+      {src: 'assets/images/projects/crimson_ronin/floresta-torii.png', cap: {pt: 'A floresta e os torii', en: 'The forest and the torii gates', es: 'El bosque y los torii'}},
+      {src: 'assets/images/projects/crimson_ronin/kage-demon-samurai.png', cap: {pt: 'Luta contra o Kage Demon Samurai', en: 'Fighting the Kage Demon Samurai', es: 'Lucha contra el Kage Demon Samurai'}}
+    ],
     kind: 'Metroidvania · Godot', // igual nos tres idiomas
     fields: [
       {
-        label: {pt: 'O jogo', en: 'The game', es: 'El juego'},
+        label: {pt: 'Do que se trata', en: 'What it is about', es: 'De qué se trata'},
+        wide: true,
         text: {
-          pt: 'Jogo de ação 2D em pixel art, publicado na itch.io. O combate é o centro de tudo: cada inimigo tem comportamento próprio, e o jogador coleta espólios ao longo do caminho.',
-          en: 'A 2D pixel art action game published on itch.io. Combat is at the center of everything: each enemy has its own behavior, and the player collects loot along the way.',
-          es: 'Juego de acción 2D en pixel art, publicado en itch.io. El combate es el centro de todo: cada enemigo tiene comportamiento propio, y el jugador recoge botín a lo largo del camino.'
+          pt: 'Crimson Ronin: Pixel Gaiden é um jogo de ação 2D em pixel art ambientado num Japão feudal sombrio, tomado por demônios. Você assume um ronin de armadura vermelha e atravessa florestas de outono, portões torii e plataformas suspensas com a espada em punho, abrindo caminho entre os inimigos até chegar aos chefes que guardam cada trecho.',
+          en: 'Crimson Ronin: Pixel Gaiden is a 2D pixel art action game set in a dark feudal Japan overrun by demons. You play a red-armored ronin crossing autumn forests, torii gates and floating platforms with your sword drawn, cutting a path through enemies until you reach the bosses guarding each stretch.',
+          es: 'Crimson Ronin: Pixel Gaiden es un juego de acción 2D en pixel art ambientado en un Japón feudal oscuro, tomado por demonios. Controlas a un ronin de armadura roja que atraviesa bosques de otoño, puertas torii y plataformas suspendidas con la espada en mano, abriéndose paso entre los enemigos hasta llegar a los jefes que custodian cada tramo.'
         }
       },
       {
-        label: {pt: 'O trabalho técnico', en: 'The technical work', es: 'El trabajo técnico'},
-        text: {
-          pt: 'Lógica exclusiva para cada inimigo em vez de um único comportamento reaproveitado, máquinas de estado para as entidades, sistema de combate, sistema de espólios e controle preciso das animações de todas as entidades.',
-          en: 'Unique logic for each enemy instead of a single reused behavior, state machines for the entities, a combat system, a loot system and precise animation control for every entity.',
-          es: 'Lógica exclusiva para cada enemigo en lugar de un único comportamiento reutilizado, máquinas de estados para las entidades, sistema de combate, sistema de botín y control preciso de las animaciones de todas las entidades.'
+        label: {pt: 'O que esperar', en: 'What to expect', es: 'Qué esperar'},
+        list: {
+          pt: [
+            'Combate de espada em que cada inimigo tem um jeito próprio de lutar, então vale observar antes de avançar.',
+            'Chefes como o Kage Demon Samurai, com barra de vida própria e lutas que pedem atenção do começo ao fim.',
+            'Espólios espalhados pelo caminho para recolher enquanto você explora.',
+            'Vida e energia sempre à vista, e uma pontuação que se acumula ao longo da partida.',
+            'Animações caprichadas em todos os personagens, do golpe à queda.',
+            'Joga direto no navegador, pela itch.io, sem instalar nada.'
+          ],
+          en: [
+            'Sword combat where every enemy has its own way of fighting, so it pays to watch before you push forward.',
+            'Bosses like the Kage Demon Samurai, with their own health bar and fights that demand attention from start to finish.',
+            'Loot scattered along the way to collect as you explore.',
+            'Health and energy always in view, and a score that builds up throughout the run.',
+            'Carefully crafted animations on every character, from the strike to the fall.',
+            'Plays right in the browser on itch.io, nothing to install.'
+          ],
+          es: [
+            'Combate con espada en el que cada enemigo tiene su propia forma de pelear, así que vale la pena observar antes de avanzar.',
+            'Jefes como el Kage Demon Samurai, con su propia barra de vida y peleas que exigen atención de principio a fin.',
+            'Botín repartido por el camino para recoger mientras exploras.',
+            'Vida y energía siempre a la vista, y una puntuación que se acumula a lo largo de la partida.',
+            'Animaciones cuidadas en todos los personajes, del golpe a la caída.',
+            'Se juega directo en el navegador, en itch.io, sin instalar nada.'
+          ]
         }
       }
     ],
     stack: ['Godot Engine', 'GDScript', 'Pixel art'],
     links: [
-      {label: {pt: 'Jogar na itch.io', en: 'Play on itch.io', es: 'Jugar en itch.io'}, url: 'https://wel-2003.itch.io/crimson-ronin', icon: 'ri-gamepad-line', solid: true}
+      {label: {pt: 'Jogar na itch.io', en: 'Play on itch.io', es: 'Jugar en itch.io'}, url: 'https://wel-2003.itch.io/crimson-ronin', icon: 'ri-gamepad-line', solid: true},
+      {label: {pt: 'Repositório', en: 'Repository', es: 'Repositorio'}, url: 'https://github.com/Well-2003/Crimson-Ronin', icon: 'ri-github-line'}
     ]
   },
 
   {
     id: 'knight',
-    logo: 'assets/images/projects/knight-icon.png',
+    logo: 'assets/images/projects/knight/icone.png',
     cats: ['jogo'],
     title: 'Knight Game Pixel2D', color: '#3E6B8A', text: '#FFFFFF',
-    image: 'https://img.itch.zone/aW1nLzI1NDM5MzI3LnBuZw==/original/akKVQS.png',
-    imageMax: '420px', // essa imagem e so o logotipo escrito, entao fica menor que as capturas de jogo
+    images: [
+      {src: 'assets/images/projects/knight/capa.png', cap: {pt: 'O logotipo do jogo', en: 'The game logo', es: 'El logotipo del juego'}},
+      {src: 'assets/images/projects/knight/cemiterio-luar.png', cap: {pt: 'O cemitério ao luar', en: 'The graveyard by moonlight', es: 'El cementerio a la luz de la luna'}},
+      {src: 'assets/images/projects/knight/estatuas.png', cap: {pt: 'As estátuas na entrada do cemitério', en: 'The statues at the graveyard entrance', es: 'Las estatuas en la entrada del cementerio'}},
+      {src: 'assets/images/projects/knight/esqueletos.png', cap: {pt: 'Os esqueletos do segundo trecho', en: 'The skeletons of the second stretch', es: 'Los esqueletos del segundo tramo'}}
+    ],
     kind: {pt: 'Plataforma 2D · Godot', en: '2D platformer · Godot', es: 'Plataformas 2D · Godot'},
     fields: [
       {
-        label: {pt: 'O jogo', en: 'The game', es: 'El juego'},
+        label: {pt: 'Do que se trata', en: 'What it is about', es: 'De qué se trata'},
+        wide: true,
         text: {
-          pt: 'Jogo de plataforma 2D em pixel art com mecânicas de combate clássicas, publicado na itch.io.',
-          en: 'A 2D pixel art platformer with classic combat mechanics, published on itch.io.',
-          es: 'Juego de plataformas 2D en pixel art con mecánicas de combate clásicas, publicado en itch.io.'
+          pt: 'Knight é um jogo de plataforma 2D em pixel art em que um pequeno cavaleiro atravessa um cemitério gótico à luz da lua. Entre lápides, estátuas encapuzadas e mausoléus, ele pula de plataforma em plataforma e enfrenta os esqueletos que guardam o lugar, tentando ir o mais longe possível sem perder todas as vidas.',
+          en: 'Knight is a 2D pixel art platformer where a small knight crosses a gothic graveyard by moonlight. Among tombstones, hooded statues and mausoleums, he leaps from platform to platform and faces the skeletons guarding the place, trying to get as far as he can without losing every life.',
+          es: 'Knight es un juego de plataformas 2D en pixel art en el que un pequeño caballero atraviesa un cementerio gótico a la luz de la luna. Entre lápidas, estatuas encapuchadas y mausoleos, salta de plataforma en plataforma y enfrenta a los esqueletos que custodian el lugar, intentando llegar lo más lejos posible sin perder todas sus vidas.'
         }
       },
       {
-        label: {pt: 'O foco', en: 'The focus', es: 'El enfoque'},
-        text: {
-          pt: 'Controles responsivos. Em jogo de plataforma, a diferença entre travado e gostoso de jogar está no tempo de resposta do pulo e do golpe, então foi aí que fui mexer.',
-          en: "Responsive controls. In a platformer, the difference between clunky and fun to play lies in how fast the jump and the attack respond, so that's where I focused.",
-          es: 'Controles responsivos. En un juego de plataformas, la diferencia entre torpe y agradable de jugar está en el tiempo de respuesta del salto y del golpe, así que ahí fue donde trabajé.'
+        label: {pt: 'O que esperar', en: 'What to expect', es: 'Qué esperar'},
+        list: {
+          pt: [
+            'Controles rápidos e precisos: o pulo e o golpe respondem na hora, do jeito que um bom jogo de plataforma pede.',
+            'Esqueletos espalhados pelas plataformas e combate corpo a corpo clássico.',
+            'Cenário noturno cheio de detalhe, com lua cheia, estátuas e casarões ao fundo.',
+            'Vidas contadas, pontos para juntar e um recorde para tentar bater a cada partida.',
+            'Joga direto no navegador, pela itch.io, sem instalar nada.'
+          ],
+          en: [
+            'Fast, precise controls: the jump and the attack respond instantly, the way a good platformer should.',
+            'Skeletons scattered across the platforms and classic melee combat.',
+            'A detailed night setting, with a full moon, statues and old houses in the background.',
+            'Limited lives, points to collect and a record to beat on every run.',
+            'Plays right in the browser on itch.io, nothing to install.'
+          ],
+          es: [
+            'Controles rápidos y precisos: el salto y el golpe responden al instante, como pide un buen juego de plataformas.',
+            'Esqueletos repartidos por las plataformas y combate cuerpo a cuerpo clásico.',
+            'Un escenario nocturno lleno de detalle, con luna llena, estatuas y casonas al fondo.',
+            'Vidas contadas, puntos para juntar y un récord que superar en cada partida.',
+            'Se juega directo en el navegador, en itch.io, sin instalar nada.'
+          ]
         }
       }
     ],
     stack: ['Godot Engine', 'GDScript', 'Pixel art'],
     links: [
-      {label: {pt: 'Jogar na itch.io', en: 'Play on itch.io', es: 'Jugar en itch.io'}, url: 'https://wel-2003.itch.io/knight-game-pixel-2d', icon: 'ri-gamepad-line', solid: true}
+      {label: {pt: 'Jogar na itch.io', en: 'Play on itch.io', es: 'Jugar en itch.io'}, url: 'https://wel-2003.itch.io/knight-game-pixel-2d', icon: 'ri-gamepad-line', solid: true},
+      {label: {pt: 'Repositório', en: 'Repository', es: 'Repositorio'}, url: 'https://github.com/Well-2003/Knight_Pixel2D_game', icon: 'ri-github-line'}
     ]
   }
 ];
@@ -367,3 +464,151 @@ const CV = {
   pt: {url: 'assets/cv/curriculo-wesley-silva-pt.pdf?v=20260912-7', file: 'Curriculo-Wesley-Silva-PT.pdf'},
   en: {url: 'assets/cv/resume-wesley-silva-en.pdf?v=20260912-7', file: 'Resume-Wesley-Silva-EN.pdf'}
 };
+
+/* Projetos que ainda estao sendo construidos, mostrados na secao "Em andamento".
+   Sao paineis que abrem e fecham igual aos casos, entao reaproveitam as classes case__*.
+   O texto aqui descreve o jogo e o que esperar dele, nao o que ja foi codado: quem le e
+   visitante do portfolio, nao revisor do repositorio. Conteudo tirado do GDD de cada um.
+   live liga o ponto que pisca no selo e locked marca o repositorio que ainda esta privado. */
+const WIP = [
+  {
+    id: 'shadows',
+    logo: 'assets/images/projects/shadows_of_the_crypt/icone.jpg',
+    logoFill: true, // arte do icone com fundo escuro proprio, ocupa o quadrado inteiro
+    images: [
+      {src: 'assets/images/projects/shadows_of_the_crypt/herois.jpg', cap: {pt: 'Os heróis e as armas, do pacote Adventurers da KayKit', en: 'The heroes and weapons, from the KayKit Adventurers pack', es: 'Los héroes y las armas, del paquete Adventurers de KayKit'}},
+      {src: 'assets/images/projects/shadows_of_the_crypt/esqueletos.jpg', cap: {pt: 'Os esqueletos inimigos, do pacote Skeletons da KayKit', en: 'The enemy skeletons, from the KayKit Skeletons pack', es: 'Los esqueletos enemigos, del paquete Skeletons de KayKit'}},
+      {src: 'assets/images/projects/shadows_of_the_crypt/masmorra.jpg', cap: {pt: 'A masmorra, com o Dungeon Asset Pack da KayKit', en: 'The dungeon, built with the KayKit Dungeon Asset Pack', es: 'La mazmorra, con el Dungeon Asset Pack de KayKit'}},
+      {src: 'assets/images/projects/shadows_of_the_crypt/pecas.jpg', cap: {pt: 'As peças de cenário do mesmo pacote', en: 'The set pieces from the same pack', es: 'Las piezas de escenario del mismo paquete'}}
+    ],
+    title: 'Shadows of the Crypt', color: '#5B4B8A', text: '#FFFFFF',
+    kind: {
+      pt: 'Action/RPG de masmorra · Godot',
+      en: 'Dungeon-crawling action RPG · Godot',
+      es: 'Action/RPG de mazmorra · Godot'
+    },
+    live: true, // ponto piscando: e o projeto que recebe commit toda semana
+    status: {pt: 'Em desenvolvimento', en: 'In development', es: 'En desarrollo'},
+    summary: {
+      pt: 'Shadows of the Crypt é um Action/RPG de masmorra em fantasia medieval. Escolha um entre cinco heróis, desça por uma cripta de quatro níveis infestada de esqueletos e chegue até o chefe final, montando o seu personagem a cada andar. Lute em primeira pessoa ou por cima do ombro e troque de visão quando quiser.',
+      en: 'Shadows of the Crypt is a dungeon-crawling action RPG in medieval fantasy. Pick one of five heroes, descend through a four-level crypt overrun by skeletons and reach the final boss, building your character on every floor. Fight in first person or over the shoulder and switch views whenever you like.',
+      es: 'Shadows of the Crypt es un Action/RPG de mazmorra en fantasía medieval. Elige uno de cinco héroes, desciende por una cripta de cuatro niveles infestada de esqueletos y llega hasta el jefe final, armando tu personaje en cada piso. Pelea en primera persona o por encima del hombro y cambia de vista cuando quieras.'
+    },
+    fields: [
+      {
+        label: {pt: 'Como se joga', en: 'How it plays', es: 'Cómo se juega'},
+        text: {
+          pt: 'Cada descida é um ciclo de luta e recompensa: derrote inimigos, abra baús, junte XP e moedas, suba de nível e distribua pontos entre cinco atributos. Os inimigos avisam antes de atacar, então vence quem lê o combate, não quem tem sorte.',
+          en: 'Every descent is a loop of fighting and reward: defeat enemies, open chests, gather XP and coins, level up and spread points across five attributes. Enemies signal before they strike, so the fight is won by reading it, not by luck.',
+          es: 'Cada descenso es un ciclo de pelea y recompensa: derrota enemigos, abre cofres, junta XP y monedas, sube de nivel y reparte puntos entre cinco atributos. Los enemigos avisan antes de atacar, así que gana quien lee el combate, no quien tiene suerte.'
+        }
+      },
+      {
+        label: {pt: 'O que esperar', en: 'What to expect', es: 'Qué esperar'},
+        list: {
+          pt: [
+            'Cinco heróis com estilos bem diferentes: o Cavaleiro que segura a linha de frente, o Bárbaro que troca defesa por dano, a Patrulheira que controla a distância, o Ladino, o mais rápido do jogo, e o Mago, que derrete quem chega perto.',
+            'Três níveis de exploração e uma arena fechada para o chefe final.',
+            'Quatro tipos de esqueleto que não lutam igual: um caça em grupo, outro é lento mas não se abala com golpe fraco, outro recua quando você avança e outro cura os aliados de longe.',
+            'Armas em quatro níveis de raridade, que você reconhece pelo próprio modelo da arma.',
+            'Barra rápida de cinco espaços, loja com armas de todas as classes e baús, barris e caixas para quebrar pelo caminho.',
+            'Primeira ou terceira pessoa com o mesmo dano, alcance e velocidade: escolha pelo gosto, não pela vantagem.',
+            'Textos em português e inglês, progresso salvo e versão para PC na itch.io.'
+          ],
+          en: [
+            'Five heroes with very different styles: the Knight who holds the front line, the Barbarian who trades defense for damage, the Ranger who controls the distance, the Rogue, the fastest in the game, and the Mage, who melts anyone who gets close.',
+            'Three levels of exploration and a closed arena for the final boss.',
+            'Four kinds of skeleton that do not fight alike: one hunts in packs, one is slow but unfazed by light hits, one backs away as you advance and one heals its allies from afar.',
+            'Weapons in four rarity tiers, recognizable by the weapon model itself.',
+            'A five-slot hotbar, a shop with weapons from every class, and chests, barrels and crates to break along the way.',
+            'First or third person with the same damage, range and speed: choose by taste, not by advantage.',
+            'Portuguese and English text, saved progress and a PC version on itch.io.'
+          ],
+          es: [
+            'Cinco héroes con estilos muy distintos: el Caballero que aguanta la primera línea, el Bárbaro que cambia defensa por daño, la Exploradora que controla la distancia, el Pícaro, el más rápido del juego, y el Mago, que derrite a quien se acerque.',
+            'Tres niveles de exploración y una arena cerrada para el jefe final.',
+            'Cuatro tipos de esqueleto que no pelean igual: uno caza en grupo, otro es lento pero no se inmuta con golpes débiles, otro retrocede cuando avanzas y otro cura a sus aliados desde lejos.',
+            'Armas en cuatro niveles de rareza, que reconoces por el propio modelo del arma.',
+            'Barra rápida de cinco espacios, tienda con armas de todas las clases y cofres, barriles y cajas para romper por el camino.',
+            'Primera o tercera persona con el mismo daño, alcance y velocidad: elige por gusto, no por ventaja.',
+            'Textos en portugués e inglés, progreso guardado y versión para PC en itch.io.'
+          ]
+        }
+      }
+    ],
+    stack: ['Godot', 'GDScript', '3D'],
+    links: [
+      {label: {pt: 'Repositório', en: 'Repository', es: 'Repositorio'}, url: 'https://github.com/Well-2003/Shadows_of_the_Crypt', icon: 'ri-github-line', solid: true}
+    ]
+  },
+
+  {
+    id: 'flipper',
+    logo: 'assets/images/projects/the_wandering/icone.jpg',
+    logoFill: true, // arte do icone com fundo proprio, ocupa o quadrado inteiro
+    images: [
+      {src: 'assets/images/projects/the_wandering/personagens.png', cap: {pt: 'O pinguim e os três inimigos: a fada, o esqueleto e a laranja', en: 'The penguin and the three enemies: the fairy, the skeleton and the orange', es: 'El pingüino y los tres enemigos: el hada, el esqueleto y la naranja'}},
+      {src: 'assets/images/projects/the_wandering/floresta.png', cap: {pt: 'A floresta', en: 'The forest', es: 'El bosque'}},
+      {src: 'assets/images/projects/the_wandering/montanhas-gelo.png', cap: {pt: 'As montanhas de gelo', en: 'The ice mountains', es: 'Las montañas de hielo'}}
+    ],
+    title: 'The Wandering Flipper', color: '#2A9D8F', text: '#FFFFFF',
+    kind: {
+      pt: 'Plataforma 2D · Godot',
+      en: '2D platformer · Godot',
+      es: 'Plataformas 2D · Godot'
+    },
+    status: {pt: 'Em desenvolvimento', en: 'In development', es: 'En desarrollo'},
+    summary: {
+      pt: 'The Wandering Flipper é um jogo de plataforma 2D no espírito dos clássicos do Mario, estrelado por um pinguim viajante. São quatro fases em biomas diferentes, cheias de moedas para juntar e inimigos para driblar, e cada uma termina com uma nota de zero a cinco estrelas.',
+      en: 'The Wandering Flipper is a 2D platformer in the spirit of the Mario classics, starring a wandering penguin. Four stages across different biomes, packed with coins to collect and enemies to dodge, each one ending with a zero-to-five star grade.',
+      es: 'The Wandering Flipper es un juego de plataformas 2D en el espíritu de los clásicos de Mario, protagonizado por un pingüino viajero. Cuatro fases en biomas distintos, llenas de monedas para juntar y enemigos que esquivar, y cada una termina con una nota de cero a cinco estrellas.'
+    },
+    fields: [
+      {
+        label: {pt: 'Como se joga', en: 'How it plays', es: 'Cómo se juega'},
+        text: {
+          pt: 'O pinguim não anda, ele corre, e é aí que mora a graça: depois de uma corrida longa ele não para na hora, escorrega. O deslize é arriscado e também é arma, porque rebate projéteis e derruba quem estiver no caminho. Some a isso pulo duplo, agachada para desviar de tiros, pisão na cabeça dos inimigos, bolas de neve contadas e nado livre nas áreas de água.',
+          en: "The penguin does not walk, he runs, and that is where the fun lives: after a long run he does not stop right away, he slides. The slide is risky and also a weapon, because it bats back projectiles and knocks down whatever is in the way. Add a double jump, a crouch to dodge shots, a stomp on enemies' heads, a limited supply of snowballs and free swimming in the water.",
+          es: 'El pingüino no camina, corre, y ahí está la gracia: después de una carrera larga no se detiene en seco, resbala. El deslizamiento es arriesgado y también es un arma, porque devuelve proyectiles y derriba a quien esté en el camino. Súmale salto doble, agacharse para esquivar disparos, pisotón en la cabeza de los enemigos, bolas de nieve contadas y nado libre en las zonas de agua.'
+        }
+      },
+      {
+        label: {pt: 'O que esperar', en: 'What to expect', es: 'Qué esperar'},
+        list: {
+          pt: [
+            'Quatro fases em biomas diferentes, praia, floresta, montanhas de gelo e trópicos, cada uma com uma mecânica nova.',
+            'Três inimigos com truques próprios: a fada que ataca com magia lá do alto, o esqueleto que arremessa ossos e levanta de novo trinta segundos depois de cair, e a laranja que rola cada vez mais rápido e fica tonta quando bate na parede.',
+            'Bolas de neve limitadas de propósito, duas para começar e no máximo doze, então muitas vezes o pulo vale mais que o tiro.',
+            'Água clara para nadar e água escura que marca o limite do mapa, fatal até com a invencibilidade ativa.',
+            'Caixas que só abrem com duas cabeçadas por baixo, plataformas que desabam e voltam, e checkpoint no meio da fase.',
+            'Nota de zero a cinco estrelas no fim de cada fase, pelas moedas, inimigos derrotados e vida restante.',
+            'Em português, inglês e espanhol.'
+          ],
+          en: [
+            'Four stages in different biomes, beach, forest, ice mountains and tropics, each with a new mechanic.',
+            'Three enemies with tricks of their own: the fairy that attacks with magic from above, the skeleton that throws bones and gets back up thirty seconds after falling, and the orange that rolls faster and faster and gets dizzy when it hits a wall.',
+            'Snowballs kept scarce on purpose, two to start and twelve at most, so the jump is often worth more than the shot.',
+            'Clear water to swim in and dark water marking the edge of the map, deadly even with invincibility on.',
+            'Boxes that only open after two headbutts from below, platforms that collapse and come back, and a checkpoint halfway through the stage.',
+            'A zero-to-five star grade at the end of each stage, based on coins, enemies defeated and health left.',
+            'In Portuguese, English and Spanish.'
+          ],
+          es: [
+            'Cuatro fases en biomas distintos, playa, bosque, montañas de hielo y trópicos, cada una con una mecánica nueva.',
+            'Tres enemigos con trucos propios: el hada que ataca con magia desde lo alto, el esqueleto que lanza huesos y se levanta de nuevo treinta segundos después de caer, y la naranja que rueda cada vez más rápido y se marea cuando choca con la pared.',
+            'Bolas de nieve limitadas a propósito, dos para empezar y doce como máximo, así que muchas veces el salto vale más que el disparo.',
+            'Agua clara para nadar y agua oscura que marca el límite del mapa, mortal incluso con la invencibilidad activa.',
+            'Cajas que solo se abren con dos cabezazos desde abajo, plataformas que se derrumban y vuelven, y un checkpoint a mitad de la fase.',
+            'Nota de cero a cinco estrellas al final de cada fase, según las monedas, los enemigos derrotados y la vida restante.',
+            'En portugués, inglés y español.'
+          ]
+        }
+      }
+    ],
+    stack: ['Godot', 'GDScript', '2D', 'Pixel art'],
+    links: [
+      // locked: o repositorio ainda e privado, entao vira um selo em vez de um link que daria 404
+      {label: {pt: 'Repositório privado', en: 'Private repository', es: 'Repositorio privado'}, url: 'https://github.com/Well-2003/The_Wandering_Flipper', icon: 'ri-lock-line', locked: true}
+    ]
+  }
+];
