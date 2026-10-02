@@ -3,78 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Wesley Silva, desenvolvedor de jogos e web em Sao Paulo.">
     <title>Wesley Silva | Desenvolvedor de jogos / web</title>
-    <meta name="description" content="Seis projetos, cada um com seu problema, sua solução e sua stack, e mais dois jogos em construção. Jogos em Godot, sistemas em Python e Flask, um compilador.">
-    <meta name="robots" content="index, follow">
 
-    <!-- Informacoes usadas quando o link e compartilhado nas redes sociais -->
-    <meta property="og:title" content="Wesley Silva | Desenvolvedor de jogos / web">
-    <meta property="og:description" content="Seis projetos, cada um com seu problema, sua solução e sua stack, e mais dois jogos em construção.">
-    <meta property="og:image" content="assets/images/logo.png">
-    <meta property="og:type" content="website">
+    <link rel="icon" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="assets/images/favicon-180.png">
 
-    <!-- Icone que aparece na aba do navegador -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-180.png">
-
-    <!-- Bibliotecas de icones e fontes do site -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Fontes do site -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Troque o numero do ?v= sempre que alterar o CSS ou os scripts, assim o navegador nao usa a copia antiga -->
-    <link rel="stylesheet" href="assets/style.css?v=20260913-26">
+    <link rel="stylesheet" href="assets/style.css?v=20261002-4">
 </head>
 <body>
 
-<!-- Textos em portugues, o data-i18n indica a chave usada nos outros idiomas -->
+<!-- Linha fina que corre a cada troca de pagina -->
+<span class="loadbar" id="loadbar"></span>
 
-<header class="header" id="header">
-    <nav class="nav wrap">
-        <a href="#top" class="brand">
-            <img src="assets/images/logo.png" alt="">
-            Wesley Silva
-        </a>
+<!-- Trilho de navegacao. Fica so com os icones e abre com os nomes ao passar o mouse -->
+<nav class="rail" id="rail" aria-label="Secoes do site">
+    <button type="button" class="rail__btn is-active" data-page="inicio">
+        <span class="rail__slot"><i data-icon="home"></i></span>
+        <span class="rail__label" data-i18n="nav_home">Início</span>
+    </button>
+    <button type="button" class="rail__btn" data-page="sobre">
+        <span class="rail__slot"><i data-icon="user"></i></span>
+        <span class="rail__label" data-i18n="nav_about">Sobre</span>
+    </button>
+    <button type="button" class="rail__btn" data-page="andamento">
+        <span class="rail__slot"><i data-icon="wip"></i></span>
+        <span class="rail__label" data-i18n="nav_wip">Em andamento</span>
+    </button>
+    <button type="button" class="rail__btn" data-page="projetos">
+        <span class="rail__slot"><i data-icon="folder"></i></span>
+        <span class="rail__label" data-i18n="nav_projects">Projetos</span>
+    </button>
+    <button type="button" class="rail__btn" data-page="curriculo">
+        <span class="rail__slot"><i data-icon="file"></i></span>
+        <span class="rail__label" data-i18n="nav_cv">Currículo</span>
+    </button>
+    <button type="button" class="rail__btn" data-page="contato">
+        <span class="rail__slot"><i data-icon="mail"></i></span>
+        <span class="rail__label" data-i18n="nav_contact">Contato</span>
+    </button>
 
-        <div class="nav__menu" id="nav-menu">
-            <ul class="nav__list">
-                <li><a href="#sobre" class="nav__link" data-i18n="nav_about">Sobre</a></li>
-                <li><a href="#andamento" class="nav__link" data-i18n="nav_wip">Em andamento</a></li>
-                <li><a href="#projetos" class="nav__link" data-i18n="nav_projects">Projetos</a></li>
-                <li><a href="#curriculo" class="nav__link" data-i18n="nav_cv">Currículo</a></li>
-                <li><a href="#contato" class="nav__link" data-i18n="nav_contact">Contato</a></li>
-            </ul>
+    <span class="rail__rule"></span>
 
-            <button class="sq-btn nav__close" id="nav-close" aria-label="Fechar menu" data-i18n-aria="nav_close"><i class="ri-close-line"></i></button>
+    <a class="rail__ext" href="https://astralchains.com/" target="_blank" rel="noopener">
+        <span class="rail__slot"><img class="rail__logo" src="assets/images/brand/astralchains.webp" alt=""></span>
+        <span class="rail__label">Astral Chains</span>
+    </a>
+    <a class="rail__ext" href="https://github.com/Well-2003" target="_blank" rel="noopener">
+        <span class="rail__slot"><i data-icon="github"></i></span>
+        <span class="rail__label">GitHub</span>
+    </a>
+    <a class="rail__ext" href="https://wel-2003.itch.io/" target="_blank" rel="noopener">
+        <span class="rail__slot"><i data-icon="gamepad"></i></span>
+        <span class="rail__label">itch.io</span>
+    </a>
+    <a class="rail__ext" href="https://www.linkedin.com/in/wesley-silva2003" target="_blank" rel="noopener">
+        <span class="rail__slot"><i data-icon="linkedin"></i></span>
+        <span class="rail__label">LinkedIn</span>
+    </a>
+
+    <button type="button" class="rail__ext" id="rocket" title="Mini game da nave"
+            data-i18n-title="rocket_title" aria-label="Abrir o mini game da nave" data-i18n-aria="rocket_label">
+        <span class="rail__slot"><i data-icon="nave"></i></span>
+        <span class="rail__label" data-i18n="rocket_tip">Mini game</span>
+    </button>
+
+    <!-- Idioma e tema, que no celular ficam aqui dentro do painel -->
+    <div class="rail__controls">
+        <div class="lang" role="group" aria-label="Idioma" data-i18n-aria="lang_label">
+            <button type="button" data-lang="pt">PT</button>
+            <button type="button" data-lang="en">EN</button>
+            <button type="button" data-lang="es">ES</button>
         </div>
+        <button type="button" class="themebtn" aria-label="Alternar tema" data-i18n-aria="theme_toggle"></button>
+    </div>
+</nav>
 
-        <div class="tools">
-            <!-- Botoes para trocar o idioma do site -->
-            <div class="lang" role="group" aria-label="Idioma" data-i18n-aria="lang_label">
-                <button type="button" data-lang="pt" class="is-active" aria-pressed="true">PT</button>
-                <button type="button" data-lang="en" aria-pressed="false">EN</button>
-                <button type="button" data-lang="es" aria-pressed="false">ES</button>
-            </div>
-            <button class="sq-btn" id="theme-btn" aria-label="Alternar tema" data-i18n-aria="theme_toggle"><i class="ri-sun-line"></i></button>
-            <button class="sq-btn nav__toggle" id="nav-toggle" aria-label="Abrir menu" data-i18n-aria="nav_open"><i class="ri-menu-line"></i></button>
-        </div>
-    </nav>
-</header>
+<!-- Botao que abre e fecha o painel de navegacao no celular -->
+<button type="button" class="rail-toggle" id="rail-toggle" aria-controls="rail" aria-expanded="false"
+        aria-label="Abrir menu" data-i18n-aria="nav_open">
+    <i data-icon="menu"></i>
+</button>
 
-<main id="top">
-    <!-- Tela inicial com nome, foto e apresentacao -->
-    <section class="hero wrap">
-        <div class="hero__top">
-            <p class="label" data-i18n="hero_role">Desenvolvedor de jogos / web · São Paulo, Brasil</p>
-            <p class="label" id="clock"></p>
-        </div>
-        <h1 class="hero__name">Wesley <em>Silva</em></h1>
-        <div class="rule"></div>
+<!-- Idioma e tema, flutuando no alto da pagina -->
+<div class="controls">
+    <div class="lang" role="group" aria-label="Idioma" data-i18n-aria="lang_label">
+        <button type="button" data-lang="pt" class="is-active" aria-pressed="true">PT</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+    <button type="button" class="themebtn" id="theme-btn" aria-label="Alternar tema" data-i18n-aria="theme_toggle">
+        <i data-icon="moon"></i> <span data-i18n="theme_dark">Tema escuro</span>
+    </button>
+</div>
 
-        <div class="hero__grid">
+<!-- Cada secao do site e uma pagina. O pages.js mostra uma de cada vez -->
+<main class="pane" id="pane">
+
+    <!-- Pagina inicial -->
+    <section class="view" id="view-inicio">
+        <div class="hero">
             <div>
-                <p class="hero__lead" data-i18n-html="hero_lead">
+                <p class="eyebrow" data-i18n="hero_place">São Paulo, Brasil</p>
+                <h1 class="hero__name">Wesley <em>Silva</em></h1>
+                <div class="rule"></div>
+                <p class="hero__role"><span id="role-text"></span><i></i></p>
+                <p class="lead hero__lead" data-i18n-html="hero_lead">
                     Oi, eu sou o Wesley. <b>Obrigado por dar uma passada por aqui.</b>
                     Este é o canto onde eu guardo as coisas que ando construindo, com o porquê
                     de cada uma delas. Fique à vontade para abrir, mexer e, se algo te
@@ -82,14 +122,18 @@
                 </p>
 
                 <div class="hero__actions">
-                    <a href="#projetos" class="btn btn--blue" data-i18n="hero_btn_projects">Ver os projetos</a>
-                    <a href="#contato" class="btn" data-i18n="hero_btn_contact">Falar comigo</a>
+                    <button type="button" class="btn btn--accent" data-page="projetos">
+                        <i data-icon="folder"></i> <span data-i18n="hero_btn_projects">Ver os projetos</span>
+                    </button>
+                    <button type="button" class="btn" data-page="contato">
+                        <i data-icon="mail"></i> <span data-i18n="hero_btn_contact">Falar comigo</span>
+                    </button>
                 </div>
 
-                <div class="hero__links">
-                    <a href="https://github.com/Well-2003" target="_blank" rel="noopener"><i class="ri-github-line"></i> GitHub</a>
-                    <a href="https://www.linkedin.com/in/wesley-silva2003" target="_blank" rel="noopener"><i class="ri-linkedin-line"></i> LinkedIn</a>
-                    <a href="https://wel-2003.itch.io/" target="_blank" rel="noopener"><i class="ri-gamepad-line"></i> itch.io</a>
+                <div class="hero__social">
+                    <a href="https://github.com/Well-2003" target="_blank" rel="noopener"><i data-icon="github"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/in/wesley-silva2003" target="_blank" rel="noopener"><i data-icon="linkedin"></i> LinkedIn</a>
+                    <a href="https://wel-2003.itch.io/" target="_blank" rel="noopener"><i data-icon="gamepad"></i> itch.io</a>
                 </div>
             </div>
 
@@ -105,170 +149,278 @@
                 </div>
             </div>
         </div>
+
+        <!-- Numeros contados pelo pages.js a partir do data.js -->
+        <div class="tiles" id="tiles"></div>
+
+        <!-- Tecnologias, montadas pelo pages.js -->
+        <div class="techs">
+            <p class="eyebrow" data-i18n="tech_title">O que eu uso</p>
+            <div class="techs__grid" id="techs"></div>
+        </div>
     </section>
 
-    <!-- Secao sobre mim -->
-    <section class="section wrap" id="sobre">
-        <h2 class="section__title" data-i18n="about_title">Sobre</h2>
-        <div class="rule"></div>
+    <!-- Pagina sobre mim -->
+    <section class="view" id="view-sobre" hidden>
+        <div class="head">
+            <div>
+                <p class="eyebrow">wesley.silva</p>
+                <h2 class="title-lg" data-i18n="about_title">Sobre</h2>
+            </div>
+        </div>
+        <div class="head__rule"></div>
 
         <div class="about">
-            <div class="block about__text reveal">
-                <h2 data-i18n="about_heading">Quem sou eu?</h2>
-                <p data-i18n="about_p1">Sou um estudante do último ano de Ciência da Computação na UNASP e desenvolvedor de jogos e web. Meu foco principal é criar experiências que as pessoas realmente gostem de usar ou jogar, sempre priorizando eficiência e funcionalidade.</p>
-                <p data-i18n="about_p2">Gosto muito de organizar a estrutura dos projetos antes da implementação, compreendendo o propósito por trás de cada decisão. Acredito no desenvolvimento como um processo contínuo: sinto-me à vontade e ansioso para revisitar sistemas, simplificando processos e aprimorando funcionalidades à medida que aprendo e cresço profissionalmente.</p>
-                <p data-i18n="about_p3">Nos dois sistemas que construí, o critério de sucesso foi o mesmo: se a pessoa precisa de treinamento para fazer a tarefa mais simples, o sistema falhou. É por isso que os estudos de caso aqui começam pelo problema, e não pela tecnologia.</p>
+            <div class="card about__text">
+                <h3 class="title-md" data-i18n="about_heading">Quem sou eu?</h3>
+                <p data-i18n="about_p1">Sou um estudante do último ano de Ciência da Computação na UNASP e desenvolvedor de jogos e web.</p>
+                <p data-i18n="about_p2">Gosto muito de organizar a estrutura dos projetos antes da implementação.</p>
+                <p data-i18n="about_p3">Nos dois sistemas que construí, o critério de sucesso foi o mesmo.</p>
             </div>
 
-            <dl class="block meta reveal">
+            <dl class="card meta">
                 <div><dt data-i18n="meta_edu_label">Formação</dt><dd data-i18n="meta_edu_value">Ciência da Computação, UNASP</dd></div>
                 <div><dt data-i18n="meta_loc_label">Localização</dt><dd data-i18n="meta_loc_value">São Paulo, Brasil</dd></div>
                 <div><dt data-i18n="meta_lang_label">Idiomas</dt><dd data-i18n="meta_lang_value">PT nativo · EN técnico · ES básico</dd></div>
             </dl>
         </div>
 
-        <!-- Cartoes de habilidades montados pelo projects.js -->
+        <!-- Cartoes de habilidades, montados pelo pages.js -->
         <div class="skills" id="skills"></div>
+
+        <!-- O mesmo cartao do estudio que aparece na tela inicial -->
+        <a class="studio" href="https://astralchains.com/" target="_blank" rel="noopener">
+            <img class="studio__logo" src="assets/images/brand/astralchains.webp" alt="">
+            <span class="studio__text">
+                <span class="eyebrow" data-i18n="studio_label">Estúdio de desenvolvimento de jogos</span>
+                <span class="studio__name">Astral Chains</span>
+                <span class="studio__line" data-i18n="studio_text">Faço parte da Astral Chains, um estúdio que desenvolve jogos e presta serviços de programação, game design e UI/UX.</span>
+            </span>
+            <span class="btn btn--accent"><i data-icon="ext"></i> <span data-i18n="studio_btn">Abrir astralchains.com</span></span>
+        </a>
     </section>
 
-    <!-- Secao do que esta sendo construido agora, cartoes montados pelo projects.js -->
-    <section class="section wrap" id="andamento">
-        <h2 class="section__title" data-i18n="wip_title">Em andamento</h2>
-        <div class="rule"></div>
-        <p class="label projects__hint" data-i18n="wip_hint">Clique em um para abrir a descrição</p>
+    <!-- Pagina do que esta sendo construido agora -->
+    <section class="view" id="view-andamento" hidden>
+        <div class="head">
+            <div>
+                <p class="eyebrow">wesley.silva</p>
+                <h2 class="title-lg" data-i18n="wip_title">Em andamento</h2>
+            </div>
+            <p class="eyebrow" data-i18n="wip_hint">Clique em um para abrir a descrição</p>
+        </div>
+        <div class="head__rule"></div>
 
-        <!-- Cartoes montados pelo projects.js com a lista WIP do data.js -->
-        <div class="wips" id="wips"></div>
+        <div class="wipgrid" id="wips"></div>
+
+        <!-- Atalhos no fim da pagina, para quem chegou ate aqui -->
+        <div class="cta">
+            <button type="button" class="btn btn--accent" data-page="curriculo">
+                <i data-icon="file"></i> <span data-i18n="nav_cv">Currículo</span>
+            </button>
+            <button type="button" class="btn" data-page="contato">
+                <i data-icon="mail"></i> <span data-i18n="nav_contact">Contato</span>
+            </button>
+        </div>
     </section>
 
-    <!-- Secao de projetos com filtros por tipo -->
-    <section class="section wrap" id="projetos">
-        <h2 class="section__title" data-i18n="projects_title">Projetos</h2>
-        <div class="rule"></div>
-        <p class="label projects__hint" data-i18n="projects_hint">Clique em um para abrir o caso completo</p>
+    <!-- Pagina dos projetos -->
+    <section class="view" id="view-projetos" hidden>
+        <div class="head">
+            <div>
+                <p class="eyebrow">wesley.silva</p>
+                <h2 class="title-lg" data-i18n="projects_title">Projetos</h2>
+            </div>
+            <p class="eyebrow" data-i18n="projects_hint">Clique em um para abrir o caso completo</p>
+        </div>
+        <div class="head__rule"></div>
 
         <div class="filters" id="filters">
-            <button class="filter is-active" data-filter="all" data-i18n="filter_all">Todos</button>
-            <button class="filter" data-filter="jogo" data-i18n="filter_games">Jogos</button>
-            <button class="filter" data-filter="web" data-i18n="filter_web">Web</button>
-            <button class="filter" data-filter="backend" data-i18n="filter_backend">Backend</button>
+            <button type="button" class="filter is-active" data-filter="all" data-i18n="filter_all">Todos</button>
+            <button type="button" class="filter" data-filter="jogo" data-i18n="filter_games">Jogos</button>
+            <button type="button" class="filter" data-filter="web" data-i18n="filter_web">Web</button>
+            <button type="button" class="filter" data-filter="backend" data-i18n="filter_backend">Backend</button>
         </div>
 
-        <!-- Paineis de projeto montados pelo projects.js com os dados do data.js -->
-        <div class="cases" id="cases"></div>
+        <div class="grid" id="cases"></div>
+
+        <!-- Atalhos no fim da pagina, para quem chegou ate aqui -->
+        <div class="cta">
+            <button type="button" class="btn btn--accent" data-page="curriculo">
+                <i data-icon="file"></i> <span data-i18n="nav_cv">Currículo</span>
+            </button>
+            <button type="button" class="btn" data-page="contato">
+                <i data-icon="mail"></i> <span data-i18n="nav_contact">Contato</span>
+            </button>
+        </div>
     </section>
 
-    <!-- Secao de curriculo com o PDF em portugues ou ingles -->
-    <section class="section wrap" id="curriculo">
-        <div class="block cv reveal">
+    <!-- Pagina de um projeto, montada pelo pages.js quando alguem clica em um cartao -->
+    <section class="view" id="view-projeto" hidden></section>
+
+    <!-- Pagina do curriculo -->
+    <section class="view" id="view-curriculo" hidden>
+        <div class="head">
             <div>
-                <h2 data-i18n="cv_title">Currículo em PDF</h2>
-                <p data-i18n="cv_text">Formação, experiência e contato em uma página. Escolha o idioma.</p>
+                <p class="eyebrow">wesley.silva</p>
+                <h2 class="title-lg" data-i18n="nav_cv">Currículo</h2>
             </div>
-            <div class="cv__side">
+        </div>
+        <div class="head__rule"></div>
+
+        <div class="cv">
+            <div class="card cv__card">
+                <h3 class="title-md" data-i18n="cv_title">Currículo em PDF</h3>
+                <p data-i18n="cv_text">Formação, experiência e contato em uma página. Escolha o idioma.</p>
+
                 <div class="switch" id="cv-switch">
-                    <button class="is-active" data-cv="pt">Português</button>
-                    <button data-cv="en">English</button>
+                    <button type="button" class="is-active" data-cv="pt">Português</button>
+                    <button type="button" data-cv="en">English</button>
                 </div>
-                <a href="assets/cv/curriculo-wesley-silva-pt.pdf?v=20260912-7" class="btn btn--blue" id="cv-download" download="Curriculo-Wesley-Silva-PT.pdf"><i class="ri-download-line"></i> <span data-i18n="cv_download">Baixar</span></a>
-                <a href="assets/cv/curriculo-wesley-silva-pt.pdf?v=20260912-7" class="btn" id="cv-view" target="_blank" rel="noopener" data-i18n="cv_view">Abrir</a>
+
+                <div class="stack-row">
+                    <a class="btn btn--accent" id="cv-view" href="assets/cv/curriculo-wesley-silva-pt.pdf?v=20261002-4" target="_blank" rel="noopener">
+                        <i data-icon="file"></i> <span data-i18n="cv_open">Abrir no navegador</span>
+                    </a>
+                    <a class="btn" id="cv-download" href="assets/cv/curriculo-wesley-silva-pt.pdf?v=20261002-4" download="Curriculo-Wesley-Silva-PT.pdf">
+                        <i data-icon="download"></i> <span data-i18n="cv_down">Baixar o PDF</span>
+                    </a>
+                    <button type="button" class="btn" data-page="contato">
+                        <i data-icon="mail"></i> <span data-i18n="nav_contact">Contato</span>
+                    </button>
+                </div>
+
+                <p class="formstatus" id="cv-status" role="status" aria-live="polite"></p>
+                <p class="note" data-i18n="cv_note">Abrir mostra o currículo em uma aba do navegador. Baixar salva o arquivo no seu computador.</p>
+            </div>
+
+            <div class="cv__sheet">
+                <p class="eyebrow" data-i18n="cv_sheet">Resumo</p>
+                <div class="cv__line">
+                    <span data-i18n="cv_role">Cargo buscado</span>
+                    <span data-i18n="cv_role_value">Desenvolvedor júnior, jogos ou web</span>
+                </div>
+                <div class="cv__line">
+                    <span data-i18n="meta_edu_label">Formação</span>
+                    <span data-i18n="meta_edu_value">Ciência da Computação, UNASP</span>
+                </div>
+                <div class="cv__line">
+                    <span data-i18n="meta_loc_label">Localização</span>
+                    <span data-i18n="meta_loc_value">São Paulo, Brasil</span>
+                </div>
+                <div class="cv__line">
+                    <span data-i18n="meta_lang_label">Idiomas</span>
+                    <span data-i18n="meta_lang_value">PT nativo · EN técnico · ES básico</span>
+                </div>
+                <div class="cv__line">
+                    <span data-i18n="contact_email_label">E-mail</span>
+                    <span>silva.wes2003@gmail.com</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Secao de contato com formulario -->
-    <section class="section wrap" id="contato">
+    <!-- Pagina de contato -->
+    <section class="view" id="view-contato" hidden>
+        <div class="head">
+            <div>
+                <p class="eyebrow">wesley.silva</p>
+                <h2 class="title-lg" data-i18n="contact_title">Vamos conversar</h2>
+            </div>
+        </div>
+        <div class="head__rule"></div>
+
         <div class="contact">
-            <div class="block contact__info reveal">
-                <h2 data-i18n="contact_title">Vamos conversar</h2>
-                <p data-i18n="contact_text">Tem um projeto em mente ou quer trocar uma ideia sobre jogos e programação? Me chama. E-mail para propostas, LinkedIn para conversa rápida.</p>
+            <div class="card contact__card">
+                <h3 class="title-md" data-i18n="contact_title">Vamos conversar</h3>
+                <p data-i18n="contact_text">Tem um projeto em mente ou quer trocar uma ideia sobre jogos e programação? Me chama.</p>
+
                 <dl class="contact__list">
-                    <div class="contact__row">
-                        <div><dt data-i18n="contact_email_label">E-mail</dt><dd>silva.wes2003@gmail.com</dd></div>
-                        <button class="copy" id="copy-mail"><i class="ri-file-copy-line"></i> <span data-i18n="copy">Copiar</span></button>
+                    <div class="crow">
+                        <div>
+                            <dt data-i18n="contact_email_label">E-mail</dt>
+                            <dd id="mail">silva.wes2003@gmail.com</dd>
+                        </div>
+                        <button type="button" id="copy-mail">
+                            <i data-icon="copy"></i> <span data-i18n="copy">Copiar</span>
+                        </button>
                     </div>
-                    <div class="contact__row">
+                    <div class="crow">
                         <div><dt>LinkedIn</dt><dd>wesley-silva2003</dd></div>
-                        <a href="https://www.linkedin.com/in/wesley-silva2003" target="_blank" rel="noopener" data-i18n="contact_open">Abrir</a>
+                        <a href="https://www.linkedin.com/in/wesley-silva2003" target="_blank" rel="noopener">
+                            <i data-icon="ext"></i> <span data-i18n="contact_open">Abrir</span>
+                        </a>
                     </div>
-                    <div class="contact__row">
+                    <div class="crow">
                         <div><dt>GitHub</dt><dd>Well-2003</dd></div>
-                        <a href="https://github.com/Well-2003" target="_blank" rel="noopener" data-i18n="contact_open">Abrir</a>
+                        <a href="https://github.com/Well-2003" target="_blank" rel="noopener">
+                            <i data-icon="ext"></i> <span data-i18n="contact_open">Abrir</span>
+                        </a>
                     </div>
-                    <div class="contact__row">
+                    <div class="crow">
                         <div><dt>itch.io</dt><dd>wel-2003</dd></div>
-                        <a href="https://wel-2003.itch.io/" target="_blank" rel="noopener" data-i18n="contact_open">Abrir</a>
+                        <a href="https://wel-2003.itch.io/" target="_blank" rel="noopener">
+                            <i data-icon="ext"></i> <span data-i18n="contact_open">Abrir</span>
+                        </a>
+                    </div>
+                    <div class="crow">
+                        <div><dt data-i18n="studio_label">Estúdio de desenvolvimento de jogos</dt><dd>Astral Chains</dd></div>
+                        <a href="https://astralchains.com/" target="_blank" rel="noopener">
+                            <i data-icon="ext"></i> <span data-i18n="contact_open">Abrir</span>
+                        </a>
                     </div>
                 </dl>
             </div>
 
-            <form class="block contact__form reveal" id="form" novalidate>
-                <div class="field">
+            <form class="card contact__card fieldset" id="form" novalidate>
+                <div>
                     <label for="nome" data-i18n="form_name">Nome</label>
                     <input type="text" id="nome" autocomplete="name" placeholder="Como devo te chamar" data-i18n-placeholder="ph_name">
                 </div>
-                <div class="field">
+                <div>
                     <label for="email" data-i18n="form_email">E-mail</label>
                     <input type="email" id="email" autocomplete="email" placeholder="para eu poder responder" data-i18n-placeholder="ph_email">
                 </div>
-                <div class="field">
+                <div>
                     <label for="msg" data-i18n="form_msg">Mensagem</label>
                     <textarea id="msg" placeholder="O que você tem em mente" data-i18n-placeholder="ph_msg"></textarea>
                 </div>
-                <p class="status" id="status" role="status" aria-live="polite"></p>
-                <button type="submit" class="btn btn--blue"><i class="ri-send-plane-line"></i> <span data-i18n="form_send">Enviar mensagem</span></button>
+                <p class="formstatus" id="status" role="status" aria-live="polite"></p>
+                <button type="submit" class="btn btn--accent">
+                    <i data-icon="send"></i> <span data-i18n="form_send">Enviar mensagem</span>
+                </button>
             </form>
         </div>
     </section>
+
 </main>
-
-<footer class="footer">
-    <div class="wrap">
-        <div class="footer__grid">
-            <a href="#top" class="brand">
-                <img src="assets/images/logo.png" alt="">
-                Wesley Silva
-            </a>
-            <nav class="footer__nav">
-                <a href="#sobre" data-i18n="nav_about">Sobre</a>
-                <a href="#andamento" data-i18n="nav_wip">Em andamento</a>
-                <a href="#projetos" data-i18n="nav_projects">Projetos</a>
-                <a href="#curriculo" data-i18n="nav_cv">Currículo</a>
-                <a href="#contato" data-i18n="nav_contact">Contato</a>
-            </nav>
-        </div>
-        <div class="footer__base">
-            <span>© <span id="year"></span> Wesley Silva</span>
-            <span data-i18n="footer_role">Desenvolvedor de jogos / web</span>
-        </div>
-    </div>
-</footer>
-
-<!-- Botoes fixos de voltar ao topo e abrir o mini game -->
-<div class="dock">
-    <a href="#top" id="to-top" aria-label="Voltar ao topo" data-i18n-aria="to_top"><i class="ri-arrow-up-line"></i></a>
-    <button id="rocket" aria-label="Abrir o mini game da nave" title="Mini game da nave" data-tip="Mini game"
-            data-i18n-aria="rocket_label" data-i18n-title="rocket_title" data-i18n-tip="rocket_tip"><i class="ri-rocket-2-line"></i></button>
-</div>
 
 <!-- Tela do mini game de asteroides, fica escondida ate o foguete ser clicado -->
 <div class="game" id="game">
     <canvas id="game-canvas"></canvas>
+
     <div class="game__hud">
         <span class="game__time" id="game-time">0s</span>
-        <button class="game__quit" id="game-quit" aria-label="Sair do jogo" data-i18n-aria="game_quit"><i class="ri-close-line"></i></button>
+        <button class="game__quit" id="game-quit" aria-label="Sair do jogo" data-i18n-aria="game_quit">
+            <i data-icon="close"></i>
+        </button>
     </div>
+
     <p class="game__hint" id="game-hint" data-i18n="game_hint">setas ou wasd para mover · espaço para atirar · esc para sair</p>
+
+    <!-- Controles que aparecem so em tela de toque -->
     <div class="game__touch" id="game-touch">
         <div>
-            <button class="touch-btn" data-touch="left"><i class="ri-arrow-left-line"></i></button>
-            <button class="touch-btn" data-touch="right"><i class="ri-arrow-right-line"></i></button>
+            <button class="touch-btn" data-touch="left" aria-label="Esquerda"><i data-icon="voltar"></i></button>
+            <button class="touch-btn" data-touch="right" aria-label="Direita"><i data-icon="arrow"></i></button>
         </div>
         <div>
-            <button class="touch-btn" data-touch="thrust"><i class="ri-arrow-up-line"></i></button>
-            <button class="touch-btn" data-touch="fire"><i class="ri-focus-3-line"></i></button>
+            <button class="touch-btn" data-touch="thrust" aria-label="Acelerar"><i data-icon="cima"></i></button>
+            <button class="touch-btn" data-touch="fire" aria-label="Atirar"><i data-icon="mira"></i></button>
         </div>
     </div>
+
+    <!-- Pergunta que aparece quando a nave e atingida -->
     <div class="quiz" id="quiz">
         <div class="quiz__box">
             <h3 data-i18n="quiz_title">Você foi atingido</h3>
@@ -276,6 +428,7 @@
             <div class="quiz__options" id="quiz-options"></div>
         </div>
     </div>
+
     <div class="over" id="over">
         <h2 data-i18n="over_title">Fim de jogo</h2>
         <p id="over-time"></p>
@@ -283,14 +436,15 @@
 </div>
 
 <!-- Scripts do site, carregados nesta ordem porque cada um usa o que o anterior preparou -->
-<script src="assets/js/data.js?v=20260913-26" defer></script>
-<script src="assets/js/questions.js?v=20260913-26" defer></script>
-<script src="assets/js/translations.js?v=20260913-26" defer></script>
-<script src="assets/js/i18n.js?v=20260913-26" defer></script>
-<script src="assets/js/projects.js?v=20260913-26" defer></script>
-<script src="assets/js/swap.js?v=20260913-26" defer></script>
-<script src="assets/js/ui.js?v=20260913-26" defer></script>
-<script src="assets/js/contact.js?v=20260913-26" defer></script>
-<script src="assets/js/game.js?v=20260913-26" defer></script>
+<script src="assets/js/data.js?v=20261002-4" defer></script>
+<script src="assets/js/translations.js?v=20261002-4" defer></script>
+<script src="assets/js/i18n.js?v=20261002-4" defer></script>
+<script src="assets/js/icons.js?v=20261002-4" defer></script>
+<script src="assets/js/pages.js?v=20261002-4" defer></script>
+<script src="assets/js/swap.js?v=20261002-4" defer></script>
+<script src="assets/js/ui.js?v=20261002-4" defer></script>
+<script src="assets/js/contact.js?v=20261002-4" defer></script>
+<script src="assets/js/questions.js?v=20261002-4" defer></script>
+<script src="assets/js/game.js?v=20261002-4" defer></script>
 </body>
 </html>

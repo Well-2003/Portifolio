@@ -1,65 +1,38 @@
-/* Tema, menu, rolagem, relogio e animacoes de entrada.
-   Roda depois do projects.js porque observa os cartoes criados por ele. */
+/* Tema claro ou escuro do site */
 (() => {
   'use strict';
 
-  /* Alterna entre o tema claro e o escuro */
-  const themeBtn = document.getElementById('theme-btn');
-  themeBtn.addEventListener('click', () => {
-    const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
-    document.documentElement.dataset.theme = next;
-    themeBtn.innerHTML = next === 'light' ? '<i class="ri-moon-line"></i>' : '<i class="ri-sun-line"></i>';
+  const CHAVE_TEMA = 'portfolio-theme';
+  // Um botao de tema fica no alto e o outro dentro do painel do celular
+  const botoesDeTema = document.querySelectorAll('.themebtn');
+
+  /* Deixa o botao com o icone e o nome do tema que esta valendo */
+  function aplicaTema(tema) {
+    document.documentElement.dataset.theme = tema;
+
+    const chave = tema === 'dark' ? 'theme_dark' : 'theme_light';
+    botoesDeTema.forEach(botao => {
+      botao.innerHTML = Icone.de(tema === 'dark' ? 'moon' : 'sun') +
+        '<span data-i18n="' + chave + '">' + I18n.t(chave) + '</span>';
+    });
+
+    try {
+      localStorage.setItem(CHAVE_TEMA, tema);
+    } catch (err) { /* sem acesso ao armazenamento, a escolha so nao fica salva */ }
+  }
+
+  // O site abre no tema escuro, a nao ser que o visitante ja tenha escolhido o claro
+  let temaSalvo = 'dark';
+  try {
+    if (localStorage.getItem(CHAVE_TEMA) === 'light') temaSalvo = 'light';
+  } catch (err) { /* sem acesso ao armazenamento, o site continua no tema escuro */ }
+
+  aplicaTema(temaSalvo);
+
+  botoesDeTema.forEach(botao => {
+    botao.addEventListener('click', () => {
+      aplicaTema(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+    });
   });
 
-  /* Abre e fecha o menu no celular */
-  const navMenu = document.getElementById('nav-menu');
-  document.getElementById('nav-toggle').addEventListener('click', () => navMenu.classList.add('is-open'));
-  document.getElementById('nav-close').addEventListener('click', () => navMenu.classList.remove('is-open'));
-  navMenu.addEventListener('click', e => {
-    if (e.target.matches('.nav__link')) navMenu.classList.remove('is-open');
-  });
-
-  /* Borda do cabecalho, botao de voltar ao topo e link ativo do menu conforme a rolagem */
-  const header = document.getElementById('header');
-  const toTop = document.getElementById('to-top');
-  const sections = document.querySelectorAll('main section[id]');
-  const navLinks = document.querySelectorAll('.nav__link');
-
-  function onScroll() {
-    const y = scrollY;
-    header.classList.toggle('is-scrolled', y > 16);
-    toTop.classList.toggle('is-visible', y > 700);
-
-    let current = '';
-    sections.forEach(s => { if (y >= s.offsetTop - 170) current = s.id; });
-    navLinks.forEach(l => l.classList.toggle('is-active', l.getAttribute('href') === '#' + current));
-  }
-  addEventListener('scroll', onScroll, {passive: true});
-  onScroll();
-
-  /* Relogio de Sao Paulo no topo, no formato do idioma escolhido */
-  const clock = document.getElementById('clock');
-  function tick() {
-    const time = new Date().toLocaleTimeString(I18n.t('clock_locale'), {
-      hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo'
-    });
-    clock.textContent = time + ' ' + I18n.t('clock_suffix');
-  }
-  tick();
-  setInterval(tick, 30000);
-  document.addEventListener('langchange', tick);
-
-  /* Animacao de entrada quando o bloco aparece na tela */
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {threshold: .08, rootMargin: '0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  /* Atualiza o ano do rodape automaticamente */
-  document.getElementById('year').textContent = new Date().getFullYear();
 })();
