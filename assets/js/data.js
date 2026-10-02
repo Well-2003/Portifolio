@@ -461,8 +461,8 @@ const SKILLS = [
 /* Curriculos em PDF da propria pasta do site. Troque o numero do ?v= sempre que
    trocar um PDF, senao quem ja abriu o curriculo continua recebendo a copia antiga. */
 const CV = {
-  pt: {url: 'assets/cv/curriculo-wesley-silva-pt.pdf?v=20260912-7', file: 'Curriculo-Wesley-Silva-PT.pdf'},
-  en: {url: 'assets/cv/resume-wesley-silva-en.pdf?v=20260912-7', file: 'Resume-Wesley-Silva-EN.pdf'}
+  pt: {url: 'assets/cv/curriculo-wesley-silva-pt.pdf?v=20261002-1', file: 'Curriculo-Wesley-Silva-PT.pdf'},
+  en: {url: 'assets/cv/resume-wesley-silva-en.pdf?v=20261002-1', file: 'Resume-Wesley-Silva-EN.pdf'}
 };
 
 /* Projetos que ainda estao sendo construidos, mostrados na secao "Em andamento".
